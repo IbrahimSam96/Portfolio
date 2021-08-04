@@ -105,6 +105,7 @@ animation: fadeEffect 1s;
     /* box-shadow: #F43B5F 0px 0px 10px 0px;  */
     box-shadow: #130707 0px 0px 10px 0px; 
     margin: 5px;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);

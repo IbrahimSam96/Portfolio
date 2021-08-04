@@ -100,8 +100,8 @@ return (
 
       <a href={"https://DashX-Portfolio.web.app"}> Dashx-Portfolio </a> 
 
-      <a> ReactJs dashboard deployed on Firebase, aimed to aggregate transactional level data
-         and display real-time performance and exposure of sub-managed accounts.     
+      <a> {`ReactJs dashboard deployed on Firebase, aimed to aggregate transactional level data
+         and display real-time performance and exposure of sub-managed accounts.`}     
       </a> 
 
       <a href="https://github.com/Ibrahimsam96/Dashx-Portfolio" > 
