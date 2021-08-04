@@ -37,12 +37,15 @@ background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28,
   padding: 15px;
   margin-left: 35px;
   box-shadow: #130707 0px 0px 10px 0px; 
- 
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
   }
   .Vintage{
     grid-column: 6/11;
     grid-row: 2/5;
     z-index: 0;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
   }
   .ProfilePageIntro:hover{
     box-shadow: #F43B5F 0px 0px 10px 0px; 
@@ -79,6 +82,8 @@ background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28,
     letter-spacing: 1.5px;
     align-self: center;
     margin-left: 35px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
   }
 
 .ProfilePageSocials{
@@ -86,7 +91,8 @@ background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28,
   grid-row:5/5;
 align-self: center;
 margin-left: 35px;
-
+-webkit-animation: fadeEffect 1s;
+animation: fadeEffect 1s;
 }
 .ProfilePageSocials a{
   margin-left: 15px;
@@ -102,6 +108,8 @@ margin-left: 35px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
   }
 
   .ProfilePageThird a{
@@ -322,12 +330,16 @@ font-size: 2.0rem;
   
   }
   
-    .ProfilePageIntro{
+   .ProfilePageIntro{
       grid-column: 2/10;
       grid-row: 2/5;
       display: grid;
     padding: 15px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
     }
+
+
     .ProfilePageIntro:hover{
       box-shadow: #F43B5F 0px 0px 10px 0px; 
       -webkit-transform: scale(1.05);
@@ -361,7 +373,8 @@ font-size: 2.0rem;
       grid-column: 2/10;
       grid-row:5/5;
     align-self: center;
-    
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
     
     }
     .ProfilePageSocials a{
@@ -377,6 +390,9 @@ font-size: 2.0rem;
       -webkit-font-smoothing: antialiased;
       letter-spacing: 1.5px;
       align-self: center;
+
+      -webkit-animation: fadeEffect 1s;
+      animation: fadeEffect 1s;
     }
   
   
