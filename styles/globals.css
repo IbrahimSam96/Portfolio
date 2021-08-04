@@ -31,10 +31,18 @@ background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28,
 }
 
   .ProfilePageIntro{
-    grid-column: 2/6;
-    grid-row: 3/5;
+    grid-column: 1/6;
+    grid-row: 2/5;
     display: grid;
   padding: 15px;
+  margin-left: 35px;
+  box-shadow: #130707 0px 0px 10px 0px; 
+ 
+  }
+  .Vintage{
+    grid-column: 6/11;
+    grid-row: 2/5;
+    z-index: 0;
   }
   .ProfilePageIntro:hover{
     box-shadow: #F43B5F 0px 0px 10px 0px; 
@@ -62,7 +70,7 @@ background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28,
 
 
                 .ProfilePageSecond{
-    grid-column: 2/6;
+    grid-column: 1/6;
     grid-row:6/6;
     color: whitesmoke; 
     font-size: 3.0rem;
@@ -70,13 +78,14 @@ background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28,
     -webkit-font-smoothing: antialiased;
     letter-spacing: 1.5px;
     align-self: center;
+    margin-left: 35px;
   }
 
 .ProfilePageSocials{
-  grid-column: 2/6;
+  grid-column: 1/6;
   grid-row:5/5;
 align-self: center;
-
+margin-left: 35px;
 
 }
 .ProfilePageSocials a{
@@ -87,7 +96,8 @@ align-self: center;
   .ProfilePageThird{
     grid-column: 1/11;
     grid-row:7/10;
-    box-shadow: #F43B5F 0px 0px 10px 0px; 
+    /* box-shadow: #F43B5F 0px 0px 10px 0px;  */
+    box-shadow: #130707 0px 0px 10px 0px; 
     margin: 5px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -119,7 +129,7 @@ align-self: center;
 
    .ProfilePageThird .Third1 a:nth-of-type(2){
     align-self: flex-end;
-    color: gray;
+    color: whitesmoke;
     font-size: 1.3rem;
     padding: 10px;
   }
@@ -145,7 +155,7 @@ align-self: center;
 
    .ProfilePageThird .Third2 a:nth-of-type(2){
     align-self: flex-end;
-    color: gray;
+    color: whitesmoke;
     font-size: 1.3rem;
     padding: 10px;
   }
@@ -169,7 +179,7 @@ align-self: center;
       }
       .ProfilePageThird .Third3 a:nth-of-type(2){
         align-self: flex-end;
-        color: gray;
+        color: whitesmoke;
         font-size: 1.3rem;
         padding: 10px;
       }
@@ -305,9 +315,9 @@ font-size: 2.0rem;
 .ProfilePage{
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(15, 125px);
+  grid-template-rows: repeat(16, 125px);
   
-  background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28, #171c28);
+  background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28,#171c28, #171c28);
   
   
   }
@@ -342,6 +352,11 @@ font-size: 2.0rem;
     align-self: center;
     }
 
+    .Vintage{
+      display: none;
+     
+    }
+
     .ProfilePageSocials{
       grid-column: 2/10;
       grid-row:5/5;
@@ -368,7 +383,7 @@ font-size: 2.0rem;
     .ProfilePageThird{
       grid-column: 1/11;
       grid-row:7/12;
-      box-shadow: #F43B5F 0px 0px 10px 0px; 
+      box-shadow: #130707 0px 0px 10px 0px; 
       margin: 5px;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -474,17 +489,17 @@ font-size: 2.0rem;
     grid-column: 2/6;
     grid-row:13/16;
   display: grid;
+  
   }
   .ProfilePageAboutMeDescription a:nth-of-type(1){
-     align-self: flex-start;
+     align-self: center;
     justify-self: flex-start;
     color: whitesmoke; 
     font-size: 1.0rem;
     font-family: Trebuchet MS,  Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     letter-spacing: 1.5px;
-    padding: 5px;
-    margin: 15px;
+
   }
   .ProfilePageAboutMeDescription a:nth-of-type(2){
     align-self: flex-start;
@@ -589,3 +604,14 @@ font-size: 2.0rem;
     transform: rotate(360deg);
   }
  }
+
+ /* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

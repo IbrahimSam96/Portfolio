@@ -38,10 +38,18 @@ return (
       </span>
 
       </div>
-
+      <div className="Vintage">
+      <Image
+          src="/vintage.svg"
+          alt="vintage"
+          width={550} height={450} 
+          
+          />
+</div>
       <span className="ProfilePageSecond">
      Recent Projects
       </span>
+      
       
       <span className="ProfilePageSocials"> 
       
@@ -122,9 +130,9 @@ return (
 
 <a href={"https://Easy-graphs.vercel.app"}> {`Easy Graphs`} </a> 
 
-<a> {`NextJs SSR app deployed on vercel and another build on AWS, using
-   Firebase's microservices such as Auth, Analytics, No-Sql 
-   database. This project aims to help creators share visuals and infographics in a dashboard.` }      
+<a> {`NextJs SSR app deployed on vercel using
+   Firebase's microservices (Auth, Analytics, No-Sql 
+   database.) This project aims to help creators share visuals and infographics in a dashboard.` }      
  </a> 
 
 <a href="https://github.com/Ibrahimsam96/EasyGraphs" > 
@@ -142,8 +150,8 @@ return (
 
       <span className="ProfilePageAboutMeDescription">
 
-      <FaLocationArrow color="#F43B5F" fontSize="1.5rem"/>   
-      <a> Toronto, Ontario </a>
+       
+      <a> <FaLocationArrow color="#F43B5F" fontSize="1.0rem"/>  Toronto, Ontario </a>
  
        <a>
          {`I like creating JSX functional components and enjoy designing them from 
