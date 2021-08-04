@@ -107,8 +107,8 @@ return (
 
       <a href={"https://DashX-Portfolio.web.app"}> Markets Snap </a>
 
-      <a> ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display
-         brief overview of financial markets.       
+      <a> {`ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display
+         brief overview of financial markets.`}       
       </a> 
 
 <a href="https://github.com/Ibrahimsam96/MarketsSnap" > 
@@ -120,7 +120,7 @@ return (
 
       <div className="Third3" >
 
-<a href={"https://Easy-graphs.vercel.app"}> Easy Graphs </a> 
+<a href={"https://Easy-graphs.vercel.app"}> {`Easy Graphs`} </a> 
 
 <a> {`NextJs SSR app deployed on vercel and another build on AWS, using
    Firebase's microservices such as Auth, Analytics, No-Sql 
@@ -146,12 +146,12 @@ return (
       <a> Toronto, Ontario </a>
  
        <a>
-         I like creating JSX functional components and enjoy designing them from 
-         scratch. All of my projects are dark themed, as they should. &#127770;  
+         {`I like creating JSX functional components and enjoy designing them from 
+         scratch. All of my projects are dark themed, as all websites should.`} 
        </a>
 
        <a>
-     I also like using developer friendly technologies to build my projects. 
+    {` I also like using developer friendly technologies to build my projects. `}
        </a>
 <span>
 {/* <FaHtml5 className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
