@@ -314,7 +314,7 @@ font-size: 2.0rem;
   
     .ProfilePageIntro{
       grid-column: 2/10;
-      grid-row: 2/4;
+      grid-row: 2/5;
       display: grid;
     padding: 15px;
     }
@@ -344,7 +344,7 @@ font-size: 2.0rem;
 
     .ProfilePageSocials{
       grid-column: 2/10;
-      grid-row:4/4;
+      grid-row:5/5;
     align-self: center;
     
     
@@ -355,7 +355,7 @@ font-size: 2.0rem;
   
 .ProfilePageSecond{
       grid-column: 2/10;
-      grid-row:5/5;
+      grid-row:6/6;
       color: whitesmoke; 
       font-size: 3.0rem;
       font-family: Trebuchet MS,  Arial, sans-serif;
@@ -367,7 +367,7 @@ font-size: 2.0rem;
   
     .ProfilePageThird{
       grid-column: 1/11;
-      grid-row:6/10;
+      grid-row:7/12;
       box-shadow: #F43B5F 0px 0px 10px 0px; 
       margin: 5px;
       display: grid;
@@ -461,7 +461,7 @@ font-size: 2.0rem;
   
   .ProfilePageAboutMe{
     grid-column: 2/10;
-    grid-row:10/10;
+    grid-row:12/13;
     color: whitesmoke; 
     font-size: 2.0rem;
     font-family: Trebuchet MS,  Arial, sans-serif;
@@ -472,7 +472,7 @@ font-size: 2.0rem;
   
   .ProfilePageAboutMeDescription{
     grid-column: 2/6;
-    grid-row:11/13;
+    grid-row:13/16;
   display: grid;
   }
   .ProfilePageAboutMeDescription a:nth-of-type(1){
@@ -573,7 +573,8 @@ font-size: 2.0rem;
   .NavBar span:nth-of-type(2){
     font-size: 2.5rem;
     color: #F43B5F;
-    font-family: Jazz LET, fantasy ;
+    font-family: Trebuchet MS,  Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
   
 }  
