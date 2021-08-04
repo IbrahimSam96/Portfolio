@@ -18,6 +18,7 @@ a {
   box-sizing: border-box;
 }
 
+@media only screen and (min-width: 859px){ 
 /* index.js */
 .ProfilePage{
 display: grid;
@@ -29,9 +30,6 @@ background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28,
 
 }
 
-
-
-  
   .ProfilePageIntro{
     grid-column: 2/6;
     grid-row: 3/5;
@@ -233,6 +231,10 @@ display: grid;
   grid-row: 4/4;
   
 }
+
+.ProfilePageAboutMeDescription .HTML5Icon{
+padding: 5px;
+}
 .ProfilePageAboutMeDescription .HTML5Icon:nth-of-type(1){
   animation: Rotate360 3s linear infinite;
   color: aqua!important;
@@ -294,7 +296,287 @@ font-size: 2.0rem;
 }
 
 
+}
 
+
+@media only screen and (max-width: 859px){ 
+
+/* index.js */
+.ProfilePage{
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(15, 125px);
+  
+  background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28, #171c28);
+  
+  
+  }
+  
+    .ProfilePageIntro{
+      grid-column: 2/10;
+      grid-row: 2/4;
+      display: grid;
+    padding: 15px;
+    }
+    .ProfilePageIntro:hover{
+      box-shadow: #F43B5F 0px 0px 10px 0px; 
+      -webkit-transform: scale(1.05);
+      transform: scale(1.05);
+    }
+  
+    .ProfilePageIntro :nth-child(1) {
+    color: whitesmoke; 
+    font-size: 3.0rem;
+    font-family: Trebuchet MS,  Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 1.5px;
+    align-self: center;
+    }
+  
+    .ProfilePageIntro :nth-child(2) {
+    color: whitesmoke; 
+    font-size: 1.5rem;
+    font-family: Trebuchet MS,  Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 1.5px;
+    align-self: center;
+    }
+
+    .ProfilePageSocials{
+      grid-column: 2/10;
+      grid-row:4/4;
+    align-self: center;
+    
+    
+    }
+    .ProfilePageSocials a{
+      margin-left: 15px;
+    }
+  
+.ProfilePageSecond{
+      grid-column: 2/10;
+      grid-row:5/5;
+      color: whitesmoke; 
+      font-size: 3.0rem;
+      font-family: Trebuchet MS,  Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 1.5px;
+      align-self: center;
+    }
+  
+  
+    .ProfilePageThird{
+      grid-column: 1/11;
+      grid-row:6/10;
+      box-shadow: #F43B5F 0px 0px 10px 0px; 
+      margin: 5px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
+  
+    .ProfilePageThird a{
+      align-self: center;
+      justify-self: center;
+      color: whitesmoke; 
+      font-size: 1.0rem;
+      font-family: Trebuchet MS,  Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 1.5px;
+    }
+  
+  .ProfilePageThird .Third1 {
+   display: grid;
+    }
+  
+    .ProfilePageThird .Third1:hover{
+      box-shadow: #F43B5F 0px 10px 10px 0px; 
+    
+       }
+  
+    .ProfilePageThird .Third1 a:nth-of-type(1){
+       align-self: flex-end;
+     }
+  
+     .ProfilePageThird .Third1 a:nth-of-type(2){
+      align-self: flex-end;
+      color: gray;
+      font-size: 1.0rem;
+      padding: 10px;
+    }
+  
+    .ProfilePageThird .Third1 a:nth-of-type(3){
+      align-self: flex-end;
+    }
+  
+  
+  
+  
+  .ProfilePageThird .Third2 {
+   display: grid;
+    }
+  
+    .ProfilePageThird .Third2:hover{
+      box-shadow: #F43B5F 0px 10px 10px 0px; 
+    
+       }
+    .ProfilePageThird .Third2 a:nth-of-type(1){
+       align-self: flex-end;
+     }
+  
+     .ProfilePageThird .Third2 a:nth-of-type(2){
+      align-self: flex-end;
+      color: gray;
+      font-size: 1.0rem;
+      padding: 10px;
+    }
+    .ProfilePageThird .Third2 a:nth-of-type(3){
+      align-self: flex-end;
+    }
+  
+  
+  
+  
+    .ProfilePageThird .Third3 {
+      display: grid;
+       }
+     
+       .ProfilePageThird .Third3:hover{
+         box-shadow: #F43B5F 0px 10px 10px 0px; 
+       
+          }
+       .ProfilePageThird .Third3 a:nth-of-type(1){
+          align-self: flex-end;
+        }
+        .ProfilePageThird .Third3 a:nth-of-type(2){
+          align-self: flex-end;
+          color: gray;
+          font-size: 1.0rem;
+          padding: 10px;
+        }
+       .ProfilePageThird .Third3 a:nth-of-type(3){
+         align-self: flex-end;
+       }
+  
+  
+  .ProfilePageAboutMe{
+    grid-column: 2/10;
+    grid-row:10/10;
+    color: whitesmoke; 
+    font-size: 2.0rem;
+    font-family: Trebuchet MS,  Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 1.5px;
+    align-self: center;
+  }
+  
+  .ProfilePageAboutMeDescription{
+    grid-column: 2/6;
+    grid-row:11/13;
+  display: grid;
+  }
+  .ProfilePageAboutMeDescription a:nth-of-type(1){
+     align-self: flex-start;
+    justify-self: flex-start;
+    color: whitesmoke; 
+    font-size: 1.0rem;
+    font-family: Trebuchet MS,  Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 1.5px;
+    padding: 5px;
+    margin: 15px;
+  }
+  .ProfilePageAboutMeDescription a:nth-of-type(2){
+    align-self: flex-start;
+   justify-self: center;
+   color: whitesmoke; 
+   font-size: 1.0rem;
+   font-family: Trebuchet MS,  Arial, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   letter-spacing: 1.5px;
+   padding: 5px;
+  }
+  .ProfilePageAboutMeDescription a:nth-of-type(3){
+    align-self: flex-start;
+   justify-self: flex-start;
+   color: whitesmoke; 
+   font-size: 1.0rem;
+   font-family: Trebuchet MS,  Arial, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   letter-spacing: 1.5px;
+   padding: 5px;
+  }
+  
+  .HTML5Icon{
+    grid-column: 1/2;
+    grid-row: 4/4;
+    
+  }
+  
+  .ProfilePageAboutMeDescription .HTML5Icon{
+  padding: 5px;
+  }
+  .ProfilePageAboutMeDescription .HTML5Icon:nth-of-type(1){
+    animation: Rotate360 3s linear infinite;
+    color: aqua!important;
+  }
+  .ProfilePageAboutMeDescription .HTML5Icon:nth-of-type(2){
+    color: yellow!important;
+  }
+  .ProfilePageAboutMeDescription .HTML5Icon:nth-of-type(3){
+    color: red!important;
+  }
+  .ProfilePageAboutMeDescription .HTML5Icon:nth-of-type(4){
+    color: orange!important;
+  }
+  .ProfilePageAboutMeDescription .HTML5Icon:nth-of-type(5){
+    color: white!important;
+    background-color: black;
+  }
+  .ProfilePageAboutMeDescription .HTML5Icon:nth-of-type(6){
+    color: #FFCB2B!important;
+  }
+  .HTML5Icon:hover{
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+  
+   .ProfileFooter{
+      grid-column: 1/11;
+      grid-row: 15/15;
+      align-self: center;
+      justify-self: center;
+      font-size: 1rem;
+      }
+  
+  
+  /* components/navigationBar.js */
+  .NavBar{
+    grid-column: 1/11;
+    grid-row: 1/1;
+    align-self: center;
+  }
+  
+  .Nav1:hover span{
+    color: aliceblue;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+   
+  }
+  
+  .NavBar span{
+  color: grey;
+  font-size: 2.0rem;
+  
+  }
+  
+  .NavBar span:nth-of-type(2){
+    font-size: 2.5rem;
+    color: #F43B5F;
+    font-family: Jazz LET, fantasy ;
+  }
+  
+}  
 /*  Animation Styles*/
 
 /* Rotater */
