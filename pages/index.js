@@ -18,7 +18,7 @@ return (
 <div className="ProfilePage">
 
       <Head>
-        <title> Ibrahim's </title>
+        <title> {`Ibrahim's`} </title>
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -33,7 +33,8 @@ return (
       </span>
 
       <span>
-        I'm a self taught web-developer specialized in building responsive web applications using React and Next framework.  
+        {`I'm a self taught web-developer specialized
+         in building responsive web applications using React and Next framework.  `}
       </span>
 
       </div>
@@ -44,7 +45,7 @@ return (
       
       <span className="ProfilePageSocials"> 
       
-      <a href="https://github.com/Ibrahimsam96/" target="_blank" > 
+      <a href="https://github.com/Ibrahimsam96/" > 
         <Image
           src="/github.svg"
           alt="github"
@@ -53,7 +54,7 @@ return (
 
        </a>
 
-       <a href="https://stackoverflow.com/users/13622908/ibra" target="_blank" > 
+       <a href="https://stackoverflow.com/users/13622908/ibra"  > 
 
 <Image
   src="/stackoverflow.svg"
@@ -63,7 +64,7 @@ return (
 
 </a>
 
-       <a href="https://twitter.com/Ibrahimsamara7/" target="_blank" > 
+       <a href="https://twitter.com/Ibrahimsamara7/"  > 
 
 <Image
   src="/twittericon.svg"
@@ -73,7 +74,7 @@ return (
 
 </a>
 
-<a href="https://www.linkedin.com/in/ibrahim-samara-442b48126/" target="_blank" > 
+<a href="https://www.linkedin.com/in/ibrahim-samara-442b48126/"  > 
 
 <Image
   src="/linkedin.svg"
@@ -95,7 +96,7 @@ return (
          and display real-time performance and exposure of sub-managed accounts.     
       </a> 
 
-      <a href="https://github.com/Ibrahimsam96/Dashx-Portfolio" target="_blank"> 
+      <a href="https://github.com/Ibrahimsam96/Dashx-Portfolio" > 
 
       <FaGithub className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
         </a>
@@ -110,7 +111,7 @@ return (
          brief overview of financial markets.       
       </a> 
 
-<a href="https://github.com/Ibrahimsam96/MarketsSnap" target="_blank"> 
+<a href="https://github.com/Ibrahimsam96/MarketsSnap" > 
 
 <FaGithub className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
   </a>
@@ -121,11 +122,12 @@ return (
 
 <a href={"https://Easy-graphs.vercel.app"}> Easy Graphs </a> 
 
-<a> NextJs SSR app deployed on vercel and another build on AWS, using  Firebase's microservices such as Auth, Analytics, No-Sql 
-   database. This project aims to help creators share visuals and infographics in a dashboard.        
+<a> {`NextJs SSR app deployed on vercel and another build on AWS, using
+   Firebase's microservices such as Auth, Analytics, No-Sql 
+   database. This project aims to help creators share visuals and infographics in a dashboard.` }      
  </a> 
 
-<a href="https://github.com/Ibrahimsam96/EasyGraphs" target="_blank"> 
+<a href="https://github.com/Ibrahimsam96/EasyGraphs" > 
 
 <FaGithub className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
   </a>
