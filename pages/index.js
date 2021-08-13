@@ -113,7 +113,7 @@ return (
 
       <div className="Third2" >
 
-      <a href={"https://DashX-Portfolio.web.app"}> Markets Snap </a>
+      <a href={"https://MarketsSnap.web.app"}> Markets Snap </a>
 
       <a> {`ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display
          brief overview of financial markets.`}       
