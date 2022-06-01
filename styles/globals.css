@@ -4,9 +4,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: #171c28;
-
-
 }
 
 a {
@@ -18,6 +15,10 @@ a {
   box-sizing: border-box;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @media only screen and (min-width: 859px){ 
 /* index.js */
 .ProfilePage{
@@ -27,18 +28,25 @@ grid-template-rows: repeat(15, 125px);
 
 background: linear-gradient(-45deg, #c9204a, #171c28, #171c28, #171c28, #171c28, #171c28);
 
+}
 
+.ProfileWrapper{
+  grid-column: 1/11;
+  grid-row: 1/16;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+ grid-template-rows: repeat(15, 125px);
 }
 
   .ProfilePageIntro{
     grid-column: 1/6;
     grid-row: 2/5;
     display: grid;
-  padding: 15px;
-   margin: 0% 10%;
-  box-shadow: #130707 0px 0px 10px 0px; 
-  -webkit-animation: fadeEffect 1s;
-  animation: fadeEffect 1s;
+    padding: 15px;
+    margin: 0% 10%;
+    box-shadow: #130707 0px 0px 10px 0px; 
+   -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
   }
 
 
@@ -306,7 +314,6 @@ padding: 5px;
 .NavBar{
   grid-column: 1/11;
   grid-row: 1/1;
-  align-self: center;
 }
 
 .Nav1:hover span{
@@ -653,4 +660,91 @@ font-size: 2.0rem;
 @keyframes fadeEffect {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+
+
+/* Theme Toggle Switch */
+.container {
+  cursor: pointer;
+}
+
+.container input {
+  display: none;
+}
+
+.container input + div {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  box-shadow: inset 14px -14px 0 0 var(--color-toggle-dark, #000);
+  transform: scale(1) rotate(-2deg);
+  transition: box-shadow 0.5s ease 0s, transform 0.4s ease 0.1s;
+}
+
+.container input + div::before {
+  content: "";
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: background 0.3s ease;
+}
+
+.container input + div::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: -4px 0 0 -4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 -23px 0 var(--color-toggle-light, #eee),
+    0 23px 0 var(--color-toggle-light, #eee),
+    23px 0 0 var(--color-toggle-light, #eee),
+    -23px 0 0 var(--color-toggle-light, #eee),
+    15px 15px 0 var(--color-toggle-light, #eee),
+    -15px 15px 0 var(--color-toggle-light, #eee),
+    15px -15px 0 var(--color-toggle-light, #eee),
+    -15px -15px 0 var(--color-toggle-light, #eee);
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.container input:checked + div {
+  box-shadow: inset 32px -32px 0 0 #fff;
+  transform: scale(0.5) rotate(0deg);
+  transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
+}
+
+.container input:checked + div::before {
+  background: var(--color-toggle-light, #eee);
+  transition: background 0.3s ease 0.1s;
+}
+
+.container input:checked + div::after {
+  transform: scale(1.5);
+  transition: transform 0.5s ease 0.15s;
+}
+:root {
+  --color-toggle-light: yellow;
+  --color-toggle-dark: bisque;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #E6E8EE;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #E56092, #F43B5F );
 }

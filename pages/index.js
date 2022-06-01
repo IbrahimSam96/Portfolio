@@ -1,185 +1,372 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
-import NavigationBar from "../components/navigationBar"
 import Image from "next/image";
+import Link from 'next/link'
+
+import React, { useState } from 'react';
+import NavigationBar from "../components/navigationBar"
 // import {FaHtml5} from 'react-icons/fa'; 
-import {FaGithub} from 'react-icons/fa'; 
-import {FaLocationArrow} from 'react-icons/fa'; 
-import {FaReact} from 'react-icons/fa'; 
-import {DiNodejsSmall} from 'react-icons/di'; 
-import {FaNpm} from 'react-icons/fa'; 
-import {FaAws} from 'react-icons/fa'; 
-import {IoLogoVercel} from 'react-icons/io5'; 
-import {IoLogoFirebase} from 'react-icons/io5'; 
+import { FaGithub } from 'react-icons/fa';
+import { FaLocationArrow } from 'react-icons/fa';
+import { FaStackOverflow } from 'react-icons/fa';
+import { FaReact } from 'react-icons/fa';
 
-const Profile = () => {
+import { DiNodejsSmall } from 'react-icons/di';
+import { FaNpm } from 'react-icons/fa';
+import { FaAws } from 'react-icons/fa';
+import { IoLogoVercel } from 'react-icons/io5';
+import { IoLogoElectron } from 'react-icons/io5';
+import { IoLogoFirebase } from 'react-icons/io5';
+import { FaLayerGroup } from 'react-icons/fa';
+import { SiTailwindcss } from 'react-icons/si';
+import { SiAzuredevops } from 'react-icons/si';
+import { SiNgrok } from 'react-icons/si';
 
-return (
 
-<div className="ProfilePage">
+// Material-UI
+import MobileStepper from '@mui/material/MobileStepper';
+import Button from '@mui/material/Button';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import { useTheme } from '@emotion/react';
+
+const Profile = ({ }) => {
+
+  const [activeStep, setActiveStep] = useState(0);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const theme = useTheme();
+
+  return (
+
+    <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,50px,350px,50px,380px,100px,1fr] bg-[#e4eff8] dark:bg-[#10182c]`}>
 
       <Head>
-        <title> {`Ibrahim's`} </title>
-
+        <title> {`Ibrahim - DevJdeed`} </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavigationBar  />
+      <NavigationBar />
 
+      <div className={` mx-4 px-2 row-start-3 row-end-4 col-start-1 col-end-8 sm:col-end-6 max-w-[500px] sm:justify-self-start grid grid-rows-[30px,80px,50px,120px,30px,40px] shadow-md dark:shadow-[#181f32] bg-[#DBE6F6] dark:bg-[#1e293b] animate-fade `}>
+        <React.Fragment>
+          <span className={`self-center justify-self-start `}>
+            <h2 className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-sm sm:text-lg `}>Hello World &#9996;</h2>
+          </span>
 
-      <div className="ProfilePageIntro" >
+          <span className={`self-start justify-self-start inline min-w-fit sm:max-w-full `}>
+            <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-light text-xs sm:text-sm `}> I"m a self taught developer specialized
+              in building responsive web-applications using
+            </p>
+            <a className={`group`} href='https://reactjs.org' rel="noreferrer" target="_blank">
+              <FaReact className={` cursor-pointer inline animate-spin ml-2`} color="#61dafb" fontSize="1.0rem" />
+              <p className={`inline text-[#61dafb] ml-1`} >React</p>
+              <span className={`hidden sm:inline absolute ml-2 invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] text-xs text-white group-hover:visible group-hover:z-50`}>
+                https://reactjs.org
+              </span>
+            </a>
+            <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-light text-lg ml-1`} >and</p>
+            <a className={`group align-middle ml-2 `}
+              href='https://nextjs.org' rel="noreferrer" target="_blank">
+              <Image
+                className={`align-middle self-center`}
+                src="/next_with_bg.svg"
+                alt="vintage"
+                width={40} height={40}
+              />
+              <span className={`hidden sm:inline sm:absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707]  text-xs text-white group-hover:visible group-hover:z-50`}>
+                https://nextjs.org
+              </span>
+            </a>
+          </span>
+          <span className={`self-center justify-self-start flex`}>
+            <FaLocationArrow color="#F43B5F" fontSize="1.0rem" className={`self-center `} />
+            <p className={`text-slate-900 dark:text-[whitesmoke] inline ml-2 text-sm sm:text-lg `}>Toronto, Ontario </p>
+          </span>
+          <span className={` self-start justify-self-start `}>
+            <p className={`text-slate-800  dark:text-[whitesmoke] mt-4 ml-2 min-w-fit sm:max-w-full text-xs sm:text-sm`}>I like creating JSX functional components and enjoy designing them from
+              scratch. Almost all of my projects are dark themed. I also like using developer friendly technologies to build my projects.</p>
+            <p className={`text-slate-800 inline ml-2 `}>  </p>
+          </span>
+          <span className={`self-start justify-self-start flex`}>
+            <FaLayerGroup color="#F43B5F" fontSize="1.0rem" className={`self-center `} />
+            <p className={`text-slate-900 dark:text-[whitesmoke]  inline ml-2 `}>Tech I like </p>
+          </span>
+          <span className={`self-center justify-self-start flex `}>
+            <span className={`group`} >
+              <FaReact className={`animate-spin text-xs sm:text-lg `} color="#61dafb" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                react.js
+              </span>
+            </span>
+            <span className={`group`} >
+              <IoLogoElectron className={`text-xs sm:text-lg ml-1 hover:scale-110 `} color="#96DCE9" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                electron.js
+              </span>
+            </span>
 
-      <span>
-      Hello World &#9996; 
-      </span>
+            <span className={`group`} >
+              <DiNodejsSmall className={` hover:scale-110	 text-xs sm:text-lg ml-1`} color="#77b360" fontSize="0.7rem" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                node.js/express
+              </span>
+            </span>
+            <span className={`group`} >
+              <FaNpm className={` hover:scale-110	 text-xs sm:text-lg ml-1`} color="red" fontSize="0.7rem" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                npm
+              </span>
+            </span>
+            <span className={`group`} >
+              <FaAws className={` hover:scale-110	 text-xs sm:text-lg ml-1`} color="orange" fontSize="0.7rem" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                aws
+              </span>
+            </span>
+            <span className={`group`} >
+              <IoLogoFirebase className={` hover:scale-110	text-xs sm:text-lg ml-1`} color="#FFCB2B" fontSize="0.7rem" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                firebase
+              </span>
+            </span>
 
-      <span>
-        {`I'm a self taught web-developer specialized
-         in building responsive web applications using React and Next framework.  `}
-      </span>
+            <span className={`group`} >
+              <IoLogoVercel className={` hover:scale-110 bg-black text-xs sm:text-lg ml-1`} color="white" fontSize="0.7rem" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                next.js/vercel
+              </span>
+            </span>
+            <span className={`group`} >
+              <SiTailwindcss className={` hover:scale-110  text-xs sm:text-lg ml-1`} color="#38bdf8" fontSize="0.7rem" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                tailwind
+              </span>
+            </span>
+            <span className={`group`}>
+
+              <SiAzuredevops className={` hover:scale-110  text-xs sm:text-lg ml-1`} color="#0074cd" fontSize="0.7rem" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                azure-devOps
+              </span>
+            </span>
+            <span className={`group`}>
+              <SiNgrok className={` hover:scale-110 bg-[#031d8e] text-xs sm:text-lg ml-1`} color="white" fontSize="0.7rem" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                ngrok
+              </span>
+            </span>
+            <span className={`group`}>
+              <FaStackOverflow className={` hover:scale-110  text-xs sm:text-lg ml-1`} color="orange" fontSize="0.7rem" />
+              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                stackoverflow
+              </span>
+            </span>
+
+          </span>
+
+        </React.Fragment>
+      </div>
+
+      <div className={` mx-4 px-2 row-start-5 row-end-6 col-start-1 col-end-8 grid grid-rows-[50px,300px] shadow-md dark:shadow-[#181f32] bg-[#DBE6F6] dark:bg-[#1e293b] overflow-x-auto overflow-y-hidden justify-self-auto lg:justify-self-start animate-fade `}>
+
+        <h2 className={` ml-2 col-start-1 col-end-2 inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-lg self-center  `}> Recent Projects</h2>
+
+        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+            Easy Graphs
+          </p>
+          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+            NextJs SSR app deployed on vercel using
+            Firebase microservices (Auth, Analytics, No-Sql firestore.)
+            In This side-project I tried to help creators
+            share visuals and infographics in a dashboard.
+            (Currently on the shelf, needs some motivation.)
+          </p>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://easy-graphs.vercel.app/' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+              View Webpage
+            </span>
+          </a>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/EasyGraphs' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+              View on Github
+              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+            </span>
+          </a>
+        </span>
+
+        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-2 col-end-3 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px] `}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+            Markets Snap
+          </p>
+          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+            ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display brief overview of financial markets.
+          </p>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://marketsSnap.web.app' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+              View Webpage
+            </span>
+          </a>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/MarketsSnap' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+              View on Github
+              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+            </span>
+          </a>
+
+        </span>
+
+        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-3 col-end-4 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]`}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+            Dashx-Portfolio
+          </p>
+          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+            ReactJs dashboard deployed on Firebase,
+            aimed to aggregate transactional level data and display real-time performance and exposure of sub-managed accounts.
+
+          </p>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://dashx-Portfolio.web.app' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+              View Webpage
+            </span>
+          </a>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/GraphX' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+              View on Github
+              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+            </span>
+          </a>
+
+        </span>
 
       </div>
-      <div className="Vintage">
-      <Image
-          src="/vintage.svg"
-          alt="vintage"
-          width={550} height={450} 
-          
-          />
-</div>
-      <span className="ProfilePageSecond">
-     Recent Projects
+
+      {/* <span className="ProfilePageSecond">
+        Recent Projects
       </span>
-      
-      
-      <span className="ProfilePageSocials"> 
-      
-      <a href="https://github.com/Ibrahimsam96/" > 
-        <Image
-          src="/github.svg"
-          alt="github"
-          width={50} height={50} 
+
+      <span className="ProfilePageSocials">
+
+        <a href="https://github.com/Ibrahimsam96/" >
+          <Image
+            src="/github.svg"
+            alt="github"
+            width={50} height={50}
+          />
+        </a>
+
+        <a href="https://stackoverflow.com/users/13622908/ibra"  >
+          <Image
+            src="/stackoverflow.svg"
+            alt="stackoverflow"
+            width={50} height={50}
           />
 
-       </a>
+        </a>
 
-       <a href="https://stackoverflow.com/users/13622908/ibra"  > 
+        <a href="https://twitter.com/Ibrahimsamara7/"  >
+          <Image
+            src="/twittericon.svg"
+            alt="twitter"
+            width={50} height={50}
+          />
 
-<Image
-  src="/stackoverflow.svg"
-  alt="stackoverflow"
-  width={50} height={50} 
-  />
+        </a>
 
-</a>
+        <a href="https://www.linkedin.com/in/ibrahim-samara-442b48126/"  >
 
-       <a href="https://twitter.com/Ibrahimsamara7/"  > 
+          <Image
+            src="/linkedin.svg"
+            alt="LinkedIn"
+            width={50} height={50}
+          />
 
-<Image
-  src="/twittericon.svg"
-  alt="twitter"
-  width={50} height={50} 
-  />
-
-</a>
-
-<a href="https://www.linkedin.com/in/ibrahim-samara-442b48126/"  > 
-
-<Image
-  src="/linkedin.svg"
-  alt="LinkedIn"
-  width={50} height={50} 
-  />
-
-</a>
+        </a>
 
       </span>
 
       <div className="ProfilePageThird">
-      
-      <div className="Third1" >
 
-      <a href={"https://DashX-Portfolio.web.app"}> Dashx-Portfolio </a> 
+        <div className="Third1" >
 
-      <a> {`ReactJs dashboard deployed on Firebase, aimed to aggregate transactional level data
-         and display real-time performance and exposure of sub-managed accounts.`}     
-      </a> 
+          <a href={"https://DashX-Portfolio.web.app"}> Dashx-Portfolio </a>
 
-      <a href="https://github.com/Ibrahimsam96/Dashx-Portfolio" > 
+          <a> {`ReactJs dashboard deployed on Firebase, aimed to aggregate transactional level data
+         and display real-time performance and exposure of sub-managed accounts.`}
+          </a>
 
-      <FaGithub className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
-        </a>
+          <a href="https://github.com/Ibrahimsam96/Dashx-Portfolio" >
+
+            <FaGithub className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
+          </a>
+
+        </div>
+
+        <div className="Third2" >
+
+          <a href={"https://MarketsSnap.web.app"}> Markets Snap </a>
+
+          <a> {`ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display
+         brief overview of financial markets.`}
+          </a>
+
+          <a href="https://github.com/Ibrahimsam96/MarketsSnap" >
+
+            <FaGithub className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
+          </a>
+
+        </div>
+
+        <div className="Third3" >
+
+          <a href={"https://Easy-graphs.vercel.app"}> {`Easy Graphs`} </a>
+
+          <a> {`NextJs SSR app deployed on vercel using
+   Firebase's microservices (Auth, Analytics, No-Sql 
+   database.) This project aims to help creators share visuals and infographics in a dashboard.` }
+          </a>
+
+          <a href="https://github.com/Ibrahimsam96/EasyGraphs" >
+
+            <FaGithub className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
+          </a>
+
+        </div>
 
       </div>
 
-      <div className="Third2" >
-
-      <a href={"https://MarketsSnap.web.app"}> Markets Snap </a>
-
-      <a> {`ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display
-         brief overview of financial markets.`}       
-      </a> 
-
-<a href="https://github.com/Ibrahimsam96/MarketsSnap" > 
-
-<FaGithub className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
-  </a>
-
-</div>
-
-      <div className="Third3" >
-
-<a href={"https://Easy-graphs.vercel.app"}> {`Easy Graphs`} </a> 
-
-<a> {`NextJs SSR app deployed on vercel using
-   Firebase's microservices (Auth, Analytics, No-Sql 
-   database.) This project aims to help creators share visuals and infographics in a dashboard.` }      
- </a> 
-
-<a href="https://github.com/Ibrahimsam96/EasyGraphs" > 
-
-<FaGithub className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
-  </a>
-
-</div>
-  
-      </div> 
-
       <span className="ProfilePageAboutMe">
-      A little about me
+        A little about me
       </span>
 
       <span className="ProfilePageAboutMeDescription">
-
-       
-      <a> <FaLocationArrow color="#F43B5F" fontSize="1.0rem"/>  Toronto, Ontario </a>
- 
-       <a>
-         {`I like creating JSX functional components and enjoy designing them from 
-         scratch. All of my projects are dark themed, as all websites should.`} 
-       </a>
-
-       <a>
-    {` I also like using developer friendly technologies to build my projects. `}
-       </a>
-<span>
-{/* <FaHtml5 className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-<FaGithub className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/> */}
-
-<FaReact className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
-<DiNodejsSmall className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
-<FaNpm className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
-<FaAws className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
-<IoLogoVercel className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
-<IoLogoFirebase className="HTML5Icon"  color="#F43B5F" fontSize="2.5rem"/>
-
-
-
-
-</span>
-
+        <a> <FaLocationArrow color="#F43B5F" fontSize="1.0rem" /> Toronto, Ontario </a>
+        <a>
+          {`I like creating JSX functional components and enjoy designing them from 
+         scratch. All of my projects are dark themed, as all websites should.`}
+        </a>
+        <a>
+          {` I also like using developer friendly technologies to build my projects. `}
+        </a>
+        <span>
+          <FaReact className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
+          <DiNodejsSmall className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
+          <FaNpm className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
+          <FaAws className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
+          <IoLogoVercel className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
+          <IoLogoFirebase className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
+        </span>
       </span>
 
-      <span className="ProfileFooter"> &#128151; </span>
+      <span className="ProfileFooter"> &#128151; </span> */}
 
     </div>
   )
