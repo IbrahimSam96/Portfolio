@@ -175,11 +175,56 @@ const Profile = ({ }) => {
         </React.Fragment>
       </div>
 
-      <div className={` mx-4 px-2 row-start-5 row-end-6 col-start-1 col-end-8 grid grid-rows-[50px,300px] shadow-md dark:shadow-[#181f32] bg-[#DBE6F6] dark:bg-[#1e293b] overflow-x-auto overflow-y-hidden justify-self-auto lg:justify-self-start animate-fade `}>
+      <div className={` mx-4 px-2 row-start-5 row-end-6 col-start-1 col-end-8 grid grid-rows-[50px,300px] overflow-x-auto overflow-y-hidden justify-self-auto shadow-md dark:shadow-[#181f32] bg-[#DBE6F6] dark:bg-[#1e293b animate-fade `}>
 
         <h2 className={` ml-2 col-start-1 col-end-2 inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-lg self-center  `}> Recent Projects</h2>
 
         <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+            Paylock
+          </p>
+          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+            EVM-based smart contract application for sending & receiving withdrawable crypto payments, 
+            this application uses Open Zeppelin Defender Relayer to relay transactions and Chainklink
+            price feed oracles to determine transactions fees.    
+          </p>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://paylock.vercel.app/' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+              View Webpage
+            </span>
+          </a>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/Paylock' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+              View on Github
+              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+            </span>
+          </a>
+        </span> 
+
+        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-2 col-end-3 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+            Raffle Mania
+          </p>
+          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+             Winner at Polygon BUIDL IT: Summer 22 hacakathon, bullet-proof smart contract lottery deployed across 4 EVM chains
+              (Polygon Mumbai, Ethereum Goerli, Binance Testnet, Avalanche Fuji).
+             This application uses Chainlink Keepers to trigger raffle draw and
+             Chainlink VRF (Verifiable Random Function) to generate a random number.    
+          </p>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://rafflemania.vercel.app/' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+              View Webpage
+            </span>
+          </a>
+          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/rafflemania' rel="noreferrer" target="_blank">
+            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+              View on Github
+              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+            </span>
+          </a>
+        </span> 
+
+        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-3 col-end-4 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
           <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
             Easy Graphs
           </p>
@@ -203,7 +248,7 @@ const Profile = ({ }) => {
           </a>
         </span>
 
-        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-2 col-end-3 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px] `}>
+        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-4 col-end-5 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px] `}>
           <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
             Markets Snap
           </p>
@@ -224,7 +269,7 @@ const Profile = ({ }) => {
 
         </span>
 
-        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-3 col-end-4 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]`}>
+        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-5 col-end-6 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]`}>
           <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
             Dashx-Portfolio
           </p>
@@ -248,126 +293,6 @@ const Profile = ({ }) => {
         </span>
 
       </div>
-
-      {/* <span className="ProfilePageSecond">
-        Recent Projects
-      </span>
-
-      <span className="ProfilePageSocials">
-
-        <a href="https://github.com/Ibrahimsam96/" >
-          <Image
-            src="/github.svg"
-            alt="github"
-            width={50} height={50}
-          />
-        </a>
-
-        <a href="https://stackoverflow.com/users/13622908/ibra"  >
-          <Image
-            src="/stackoverflow.svg"
-            alt="stackoverflow"
-            width={50} height={50}
-          />
-
-        </a>
-
-        <a href="https://twitter.com/Ibrahimsamara7/"  >
-          <Image
-            src="/twittericon.svg"
-            alt="twitter"
-            width={50} height={50}
-          />
-
-        </a>
-
-        <a href="https://www.linkedin.com/in/ibrahim-samara-442b48126/"  >
-
-          <Image
-            src="/linkedin.svg"
-            alt="LinkedIn"
-            width={50} height={50}
-          />
-
-        </a>
-
-      </span>
-
-      <div className="ProfilePageThird">
-
-        <div className="Third1" >
-
-          <a href={"https://DashX-Portfolio.web.app"}> Dashx-Portfolio </a>
-
-          <a> {`ReactJs dashboard deployed on Firebase, aimed to aggregate transactional level data
-         and display real-time performance and exposure of sub-managed accounts.`}
-          </a>
-
-          <a href="https://github.com/Ibrahimsam96/Dashx-Portfolio" >
-
-            <FaGithub className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-          </a>
-
-        </div>
-
-        <div className="Third2" >
-
-          <a href={"https://MarketsSnap.web.app"}> Markets Snap </a>
-
-          <a> {`ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display
-         brief overview of financial markets.`}
-          </a>
-
-          <a href="https://github.com/Ibrahimsam96/MarketsSnap" >
-
-            <FaGithub className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-          </a>
-
-        </div>
-
-        <div className="Third3" >
-
-          <a href={"https://Easy-graphs.vercel.app"}> {`Easy Graphs`} </a>
-
-          <a> {`NextJs SSR app deployed on vercel using
-   Firebase's microservices (Auth, Analytics, No-Sql 
-   database.) This project aims to help creators share visuals and infographics in a dashboard.` }
-          </a>
-
-          <a href="https://github.com/Ibrahimsam96/EasyGraphs" >
-
-            <FaGithub className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-          </a>
-
-        </div>
-
-      </div>
-
-      <span className="ProfilePageAboutMe">
-        A little about me
-      </span>
-
-      <span className="ProfilePageAboutMeDescription">
-        <a> <FaLocationArrow color="#F43B5F" fontSize="1.0rem" /> Toronto, Ontario </a>
-        <a>
-          {`I like creating JSX functional components and enjoy designing them from 
-         scratch. All of my projects are dark themed, as all websites should.`}
-        </a>
-        <a>
-          {` I also like using developer friendly technologies to build my projects. `}
-        </a>
-        <span>
-          <FaReact className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-          <DiNodejsSmall className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-          <FaNpm className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-          <FaAws className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-          <IoLogoVercel className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-          <IoLogoFirebase className="HTML5Icon" color="#F43B5F" fontSize="2.5rem" />
-        </span>
-      </span>
-
-      <span className="ProfileFooter"> &#128151; </span> */}
-
     </div>
   )
 }
