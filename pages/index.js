@@ -175,7 +175,7 @@ const Profile = ({ }) => {
         </React.Fragment>
       </div>
 
-      <div className={` mx-4 px-2 row-start-5 row-end-6 col-start-1 col-end-8 grid grid-rows-[50px,300px] overflow-x-auto overflow-y-hidden justify-self-auto shadow-md dark:shadow-[#181f32] bg-[#DBE6F6] dark:bg-[#1e293b animate-fade `}>
+      <div className={` mx-4 px-2 row-start-5 row-end-6 col-start-1 col-end-8 grid grid-rows-[50px,300px] overflow-x-auto overflow-y-hidden justify-self-auto shadow-md dark:shadow-[#181f32] bg-[#DBE6F6] dark:bg-[#1e293b] animate-fade `}>
 
         <h2 className={` ml-2 col-start-1 col-end-2 inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-lg self-center  `}> Recent Projects</h2>
 
