@@ -32,18 +32,6 @@ import { useTheme } from '@emotion/react';
 
 const Profile = ({ }) => {
 
-  const [activeStep, setActiveStep] = useState(0);
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const theme = useTheme();
-
   return (
 
     <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,50px,350px,50px,380px,100px,1fr] bg-[#e4eff8] dark:bg-[#10182c]`}>
@@ -76,7 +64,7 @@ const Profile = ({ }) => {
             <a className={`group align-middle ml-2 `}
               href='https://nextjs.org' rel="noreferrer" target="_blank">
               <Image
-                className={`align-middle self-center`}
+                className={`align-middle self-center inline`}
                 src="/next_with_bg.svg"
                 alt="vintage"
                 width={40} height={40}
