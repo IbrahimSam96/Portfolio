@@ -1,26 +1,30 @@
-import { Edges, useCursor, Image, Environment, MeshReflectorMaterial, MeshRefractionMaterial, OrbitControls, PerspectiveCamera, Stats, Text, Trail, useTexture, Stars } from "@react-three/drei";
+import { Edges, useCursor, Image, Environment, MeshReflectorMaterial, MeshRefractionMaterial, OrbitControls, PerspectiveCamera, Stats, Text, Trail, useTexture, Stars, CubeCamera, useVideoTexture, useAspect, Float, useScroll, Scroll, ScrollControls } from "@react-three/drei";
 import { Canvas, useLoader, useFrame, useThree } from "@react-three/fiber";
 import React from "react";
 import { useRef, useEffect, useState } from "react";
 import * as THREE from 'three'
 import { Color, Vector3, RepeatWrapping, TextureLoader } from 'three';
-
+import { EffectComposer, Bloom, DepthOfField, ChromaticAberration } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
-import { SCIFI } from "../SCIFI";
-import { SPACE } from "../SPACE";
+import { Suspense } from "react";
+
 const Home = () => {
 
     const GOLDENRATIO = 1.61803398875
 
     const projects = [
         // Front
-        { position: [1.5, 0, 2.5], rotation: [0, -Math.PI / 3.5, 0], url: '/Paylock.jpg', name: "Paylock" },
-        { position: [-1.5, 0, 0], rotation: [0, Math.PI / 3.5, 0], url: "/MarketsSnap.png", name: "MarketsSnap" },
+        { position: [1.5, 0, 2.5], rotation: [0, -Math.PI / 3.5, 0], url: '/Paylock.jpg', name: "Paylock", media: "/Paylock.mp4" },
+        { position: [-1.5, 0, 0], rotation: [0, Math.PI / 3.5, 0], url: '/RaffleMania.png', name: "Rafflemania", media: "/RaffleMania.mp4" },
 
-        { position: [1.5, 0, -2.5], rotation: [0, -Math.PI / 3.5, 0], url: "/DashX.png", name: "DashX" },
-        { position: [-1.5, 0, -5.0], rotation: [0, Math.PI / 3.5, 0], url: "/GraphX.png", name: "GrpahX" },
-        { position: [1.5, 0, -7.5], rotation: [0, -Math.PI / 3.5, 0], url: '/RaffleMania.png', name: "Rafflemania" },
+        { position: [1.5, 0, -2.5], rotation: [0, -Math.PI / 3.5, 0], url: "/DashX.png", name: "DashX", media: "/DashX.mp4" },
+        { position: [-1.5, 0, -5.0], rotation: [0, Math.PI / 3.5, 0], url: "/GraphX.png", name: "GraphX", media: "/GraphX.mp4" },
+        {
+            position: [1.5, 0, -7.5], rotation: [0, -Math.PI / 3.5, 0],
+            url: "/MarketsSnap.png", name: "MarketsSnap", media: "/MarketsSnap.mp4"
+        },
 
         // { position: [-2, 0, 2.75], rotation: [0, Math.PI / 2.5, 0], url: pexel(358574) },
         // // Right
@@ -28,7 +32,6 @@ const Home = () => {
         // { position: [2.15, 0, 1.5], rotation: [0, -Math.PI / 2.5, 0], url: pexel(911738) },
         // { position: [2, 0, 2.75], rotation: [0, -Math.PI / 2.5, 0], url: pexel(1738986) }
     ]
-
 
     const Ground = () => {
 
@@ -69,6 +72,7 @@ const Home = () => {
             </React.Fragment>
         )
     }
+
     const FloatingGrid = ({ position }) => {
 
         const diffuse = useLoader(TextureLoader, "Textures/grid-texture.png");
@@ -81,10 +85,10 @@ const Home = () => {
             diffuse.offset.set(0, 0)
         }, [diffuse]);
 
-        //       useFrame((state, delta) => {
-        //     let t = -state.clock.getElapsedTime() * 0.68;
+        // useFrame((state, delta) => {
+        //     let t = state.clock.getElapsedTime() * 0.68;
         //     diffuse.offset.set(0, t);
-        //   });
+        // });
 
 
         return (
@@ -102,48 +106,52 @@ const Home = () => {
             </React.Fragment>
         )
     }
-    const Frame = ({ url, name, c = new THREE.Color(), ...props }) => {
+
+    const Frame = ({ url, name, media, index, c = new THREE.Color(), ...props }) => {
 
         const project = useRef()
-        const frame = useRef()
+        const frame = useRef();
         const [, params] = useRoute('/scene/:id')
         const [hovered, hover] = useState(false)
-        const [rnd] = useState(() => Math.random())
-        // const name = getUuid(url)
+
         const isActive = params?.id === name
         useCursor(hovered)
 
-        // 
-        useFrame((state, dt) => {
-            // image.current.material.zoom = 2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) *9
-            easing.damp3(project.current.scale, [0.85 * (!isActive && hovered ? 0.85 : 1), 0.9 * (!isActive && hovered ? 0.905 : 1), 1], 0.1, dt)
-            easing.dampC(frame.current.material.color, hovered ? 'orange' : 'white', 0.1, dt)
-        })
+        function VideoMaterial({ url, ...prop }) {
+            const texture = useVideoTexture(`\Textures${url}`)
+            return (<meshBasicMaterial ref={project} map={texture} toneMapped={false} {...prop} />)
+        }
+
         return (
             <group {...props}>
                 <mesh
+                    ref={project}
                     name={name}
-                    onPointerOver={(e) => (e.stopPropagation(), hover(true))}
-                    onPointerOut={() => hover(false)}
-                    scale={[1, GOLDENRATIO, 0.05]}
-                    position={[0, GOLDENRATIO / 2, 0]}>
+                    onPointerver={(e) => (e.stopPropagation(), hover(true))}
+                    onPointerOuOt={() => hover(false)}
+                    scale={[1.1, GOLDENRATIO, 0.05]}
+                    position={[0, GOLDENRATIO / 1.9, 0]}>
                     <boxGeometry />
                     <meshStandardMaterial color="black" metalness={0.5} roughness={0.5} envMapIntensity={2} />
-                    <mesh ref={frame} raycast={() => null} scale={[0.9, 0.93, 0.9]} position={[0, 0, 0.2]}>
+                    <mesh ref={frame} raycast={() => null} scale={[1, 0.93, 0.9]} position={[0, 0, 0.2]}>
                         <boxGeometry />
-                        <meshBasicMaterial toneMapped={false} fog={false} />
+                        <Suspense fallback={null}>
+                            <VideoMaterial url={media} />
+                        </Suspense>
                         <Edges
                             scale={1.1}
                             threshold={15} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
-                            color="hotpink"
+                            color={"LightBlue"}
+                        // color={index % 2 == 0 ? "grey" : "red"}
                         />
                     </mesh>
 
-                    <Image raycast={() => null} ref={project} position={[0, 0, 0.7]} url={url} />
+                    {/* <Image raycast={() => null} ref={project} position={[0, 0, 0.7]} url={url} /> */}
                 </mesh>
-                <Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.025}>
+                <Text color={"White"} maxWidth={0.1} anchorX="left" anchorY="top" position={[0.7, GOLDENRATIO, 0]} fontSize={0.025}>
                     {name}
                 </Text>
+
             </group>
         )
     }
@@ -153,28 +161,30 @@ const Home = () => {
         const clicked = useRef()
         const [, params] = useRoute('/scene/:id')
         const [, setLocation] = useLocation()
+        const scroll = useScroll()
 
         useFrame((state, delta) => {
-
-            clicked.current = ref.current.getObjectByName(params?.id);
+            clicked.current = ref.current.getObjectByName(params?.id)
+            // console.log(ref.current)
             if (clicked.current) {
                 clicked.current.parent.updateWorldMatrix(true, true)
-                clicked.current.parent.localToWorld(p.set(0, GOLDENRATIO / 2, 1.25))
+                clicked.current.parent.localToWorld(p.set(0, GOLDENRATIO / 1.9, 1.25))
                 clicked.current.parent.getWorldQuaternion(q)
             }
             else {
-                p.set(0, 0, 5.5)
+                let x = state.mouse.x * 0.25
+                let y = state.mouse.y * 0.25
+                p.set(x, y, 5.5 + scroll.scroll.current * -10)
                 q.identity()
             }
         })
 
         // Selects object to ease, 
         // How fast camera moves after each project is selected
-        // 
         useFrame((state, dt) => {
             easing.damp3(state.camera.position, p, 0.3, dt)
             easing.dampQ(state.camera.quaternion, q, 0.3, dt)
-            // easing.damp3(state.camera.position, [0, 0, 10 - window.scrollY / 500.0], 0.8, dt)
+
         })
 
         return (
@@ -186,24 +196,27 @@ const Home = () => {
                             setLocation(clicked.current == e.object ? '/scene' : '/scene/' + e.object.name)
                     }}
                     onPointerMissed={() => setLocation('/scene')}>
-                    {projects.map((props) => <Frame key={props.url} {...props} /> /* prettier-ignore */)}
+                    {projects.map((props, index) => <Frame key={props.url} {...props} index={index} /> /* prettier-ignore */)}
 
                 </group>
             </React.Fragment>
         )
     }
 
-    const Cube = ({ color, Index }) => {
+    const Cube = ({ color, Index, edgeColor }) => {
 
         const boxRef = useRef();
         // Math.random returns 0-1 Math.pow(X,Y) 0-1^2 
         const [scale] = useState(() => Math.pow(Math.random(), 2) * 0.25 + 0.05);
         const [xRotSpeed] = useState(() => Math.random());
         const [yRotSpeed] = useState(() => Math.random());
+        const [hovered, hover] = useState(false)
 
         useFrame((state, delta) => {
             boxRef.current.rotation.x += delta * xRotSpeed
             boxRef.current.rotation.y += delta * yRotSpeed
+            
+            // console.log(boxRef.current)
 
         }, [xRotSpeed, yRotSpeed]);
 
@@ -230,9 +243,23 @@ const Home = () => {
         return (
             <React.Fragment>
                 return (
-                <mesh ref={boxRef} scale={scale} castShadow  >
+                <mesh
+                    ref={boxRef}
+                    scale={scale}
+                    castShadow  
+                    // onPointerLeave={() => hover(false)}
+                    // onPointerOver={(e) => (e.stopPropagation(), hover(true))}
+                    onClick={(e) => hover(!hovered)}
+
+                    >
                     <boxGeometry args={[1, 1, 1]} />
-                    <meshStandardMaterial color={color} envMapIntensity={0.15} />
+                    <meshBasicMaterial color={hovered ? "orange": color} envMapIntensity={.15} />
+                    <Edges
+                        scale={1.1}
+                        threshold={15} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
+                        color={edgeColor}
+                    />
+
                 </mesh>
                 )
             </React.Fragment>
@@ -248,7 +275,7 @@ const Home = () => {
                 let mesh = ringsRef.current[i];
 
                 if (i % 2 == 1) {
-                    mesh.material.emissive = new Color(100, 41.2, 70.6)
+                    mesh.material.emissive = new Color(6, 0.15, 0.7)
                 }
                 else {
                     mesh.material.emissive = new Color(0.1, 0.7, 3)
@@ -266,6 +293,20 @@ const Home = () => {
                 let dist = Math.abs(z)
 
                 mesh.scale.set(1 - dist * 0.04, 1 - dist * 0.04, 1 - dist * 0.04)
+
+
+                let colorScale = 1;
+                // if (dist > 2) {
+                //   colorScale = 1 - (Math.min(dist, 12) - 2) / 6;
+                // }
+                colorScale *= 0.5;
+
+                if (i % 2 == 1) {
+                    mesh.material.emissive = new Color(6, 0.15, 0.7).multiplyScalar(colorScale);
+                } else {
+                    mesh.material.emissive = new Color(0.1, 0.7, 3).multiplyScalar(colorScale);
+                }
+
 
                 // if (i % 2 == 1) {
                 //     mesh.material.emissive = new Color(6, 0.15, 0.7)
@@ -288,67 +329,77 @@ const Home = () => {
             </React.Fragment>
         )
     }
+
     return (
-        <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,350px] bg-[black]`}>
+        <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,1fr] bg-[black]`}>
 
             <Canvas className={`row-start-2 col-start-1 col-span-7`} shadows camera={{ fov: 70, position: [0, 2, 15] }}>
                 <Stats />
                 <ambientLight intensity={1} />
+                <ScrollControls damping={4} pages={4} distance={1} infinite >
+                    {[
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map((obj, i) => {
+                            return (
+                                <Cube
+                                    key={i}
+                                    Index={i}
+                                    color={i % 2 == 0 ? "hotpink" : [0.1, 0.7, 3]}
+                                    edgeColor={i % 2 == 0 ? "red" : "DarkBlue"}
+                                />
+                            )
+                        })}
+                    <Rings />
 
-                {[
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map((obj, i) => {
-                        return (
-                            <Cube
-                                key={i}
-                                Index={i}
-                                color={i % 2 == 0 ? "hotpink" : [0.1, 0.7, 3]}
+                    <group position={[0, -.75, 0]}>
+
+                        <Frames projects={projects} />
+
+                        <FloatingGrid position={[0, 0.2, 0]} />
+                        <mesh rotation={[-Math.PI / 2, 0, 0]} castShadow receiveShadow>
+                            <planeGeometry args={[50, 50]} />
+                            <MeshReflectorMaterial
+                                blur={[300, 100]}
+                                resolution={2048}
+                                mixBlur={1}
+                                mixStrength={50}
+                                roughness={1}
+                                depthScale={1.2}
+                                minDepthThreshold={0.4}
+                                maxDepthThreshold={1.4}
+                                color="#050505"
+                                metalness={0.5}
                             />
-                        )
-                    })}
+                        </mesh>
+                    </group>
 
-                <Rings />
-                <fog attach="fog" args={['#191920', 0, 30]} />
-                <group position={[0, -.75, 0]}>
-                    <Frames projects={projects} />
-                    <FloatingGrid position={[0, 0.2, 0]} />
-
-                    <mesh rotation={[-Math.PI / 2, 0, 0]} castShadow receiveShadow>
-                        <planeGeometry args={[50, 50]} />
-                        <MeshReflectorMaterial
-                            blur={[300, 100]}
-                            resolution={2048}
-                            mixBlur={1}
-                            mixStrength={50}
-                            roughness={1}
-                            depthScale={1.2}
-                            minDepthThreshold={0.4}
-                            maxDepthThreshold={1.4}
-                            color="#050505"
-                            metalness={0.5}
+                    <CubeCamera resolution={125} frames={Infinity}>
+                        {(texture) => (
+                            <React.Fragment>
+                                <Environment map={texture} />
+                                {/* Elements here wont reflect on car */}
+                                
+                                <Stars radius={100} depth={500} count={5000} factor={4} saturation={0} fade speed={2} />
+                            </React.Fragment>
+                        )}
+                    </CubeCamera>
+                    <EffectComposer>
+                        <DepthOfField focusDistance={0.0036} focalLength={0.03} bokehScale={6} height={480} />
+                        <Bloom
+                            blendFunction={BlendFunction.ADD}
+                            intensity={0.25}
+                            width={300}
+                            height={300}
+                            kernelSize={5}
+                            luminanceThreshold={0.65}
+                            luminanceSmoothing={0.25}
                         />
-                    </mesh>
-                </group>
-                <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-                    
-
-                {/* <EffectComposer>
-                    <DepthOfField focusDistance={0.0036} focalLength={0.01} bokehScale={6} height={480} />
-                    <Bloom
-                        blendFunction={BlendFunction.ADD}
-                        intensity={1.3}
-                        width={300}
-                        height={300}
-                        kernelSize={5}
-                        luminanceThreshold={0.65}
-                        luminanceSmoothing={0.25}
-                    />
-                    <ChromaticAberration
-                        blendFunction={BlendFunction.NORMAL}
-                        offset={[0.0005, 0.0012]} />
-                </EffectComposer> */}
-
+                        <ChromaticAberration
+                            blendFunction={BlendFunction.NORMAL}
+                            offset={[0.0005, 0.0012]} />
+                    </EffectComposer>
+                </ScrollControls>
 
             </Canvas>
         </div>
