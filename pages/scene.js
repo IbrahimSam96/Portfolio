@@ -119,36 +119,36 @@ const Home = () => {
 
         function VideoMaterial({ url, ...prop }) {
             const texture = useVideoTexture(`\Textures${url}`)
+
             return (<meshBasicMaterial ref={project} map={texture} toneMapped={false} {...prop} />)
         }
+
+
 
         return (
             <group {...props}>
                 <mesh
                     ref={project}
                     name={name}
-                    onPointerver={(e) => (e.stopPropagation(), hover(true))}
-                    onPointerOuOt={() => hover(false)}
+                    onPointerOver={(e) => (e.stopPropagation(), hover(true))}
+                    onPointerOut={() => hover(false)}
                     scale={[1.1, GOLDENRATIO, 0.05]}
                     position={[0, GOLDENRATIO / 1.9, 0]}>
                     <boxGeometry />
-                    <meshStandardMaterial color="black" metalness={0.5} roughness={0.5} envMapIntensity={2} />
-                    <mesh ref={frame} raycast={() => null} scale={[1, 0.93, 0.9]} position={[0, 0, 0.2]}>
+                    <meshStandardMaterial color={"black"} metalness={0.5} roughness={0.5} envMapIntensity={2} />
+                    <mesh ref={frame} raycast={() => null} scale={[0.95, 0.93, 0.9]} position={[0, 0, 0.2]}>
                         <boxGeometry />
-                        <Suspense fallback={null}>
                             <VideoMaterial url={media} />
-                        </Suspense>
                         <Edges
                             scale={1.1}
                             threshold={15} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
-                            color={"LightBlue"}
-                        // color={index % 2 == 0 ? "grey" : "red"}
+                            color={isActive ? "orange":"turquoise"}
                         />
                     </mesh>
 
                     {/* <Image raycast={() => null} ref={project} position={[0, 0, 0.7]} url={url} /> */}
                 </mesh>
-                <Text color={"White"} maxWidth={0.1} anchorX="left" anchorY="top" position={[0.7, GOLDENRATIO, 0]} fontSize={0.025}>
+                <Text color={"White"} maxWidth={0.1} anchorX="left" anchorY="top" position={[0.7, GOLDENRATIO, 0]} fontSize={0.05}>
                     {name}
                 </Text>
 
@@ -215,7 +215,7 @@ const Home = () => {
         useFrame((state, delta) => {
             boxRef.current.rotation.x += delta * xRotSpeed
             boxRef.current.rotation.y += delta * yRotSpeed
-            
+
             // console.log(boxRef.current)
 
         }, [xRotSpeed, yRotSpeed]);
@@ -246,14 +246,14 @@ const Home = () => {
                 <mesh
                     ref={boxRef}
                     scale={scale}
-                    castShadow  
+                    castShadow
                     // onPointerLeave={() => hover(false)}
                     // onPointerOver={(e) => (e.stopPropagation(), hover(true))}
                     onClick={(e) => hover(!hovered)}
 
-                    >
+                >
                     <boxGeometry args={[1, 1, 1]} />
-                    <meshBasicMaterial color={hovered ? "orange": color} envMapIntensity={.15} />
+                    <meshBasicMaterial color={hovered ? "orange" : color} envMapIntensity={.15} />
                     <Edges
                         scale={1.1}
                         threshold={15} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
@@ -379,7 +379,7 @@ const Home = () => {
                             <React.Fragment>
                                 <Environment map={texture} />
                                 {/* Elements here wont reflect on car */}
-                                
+
                                 <Stars radius={100} depth={500} count={5000} factor={4} saturation={0} fade speed={2} />
                             </React.Fragment>
                         )}
