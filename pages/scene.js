@@ -380,16 +380,16 @@ const Home = () => {
                             <React.Fragment>
                                 <Environment map={texture} />
                                 {/* Elements here wont reflect on car */}
-                                <Float
-                                    speed={1} // Animation speed, defaults to 1
-                                    rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
-                                    floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-                                    floatingRange={[1.2, 1.5]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-                                >
-
-                                    <SCIFI />
-                                </Float >
-
+                                <Suspense fallback={null}>
+                                    <Float
+                                        speed={1} // Animation speed, defaults to 1
+                                        rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
+                                        floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+                                        floatingRange={[1.2, 1.5]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+                                    >
+                                        <SCIFI />
+                                    </Float >
+                                </Suspense>
                                 <Stars radius={100} depth={500} count={5000} factor={4} saturation={0} fade speed={2} />
                             </React.Fragment>
                         )}
