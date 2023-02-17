@@ -1,11 +1,11 @@
 Model Information:
-* title:	Scifi landscape
-* source:	https://sketchfab.com/3d-models/scifi-landscape-db1a1578f71249fb99524073de75c02a
-* author:	k.loren (https://sketchfab.com/k.loren)
+* title:	Spaceship 4
+* source:	https://sketchfab.com/3d-models/spaceship-4-a202b7aeace74902aa006defa33c55f6
+* author:	re1monsen (https://sketchfab.com/re1monsen)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Scifi landscape" (https://sketchfab.com/3d-models/scifi-landscape-db1a1578f71249fb99524073de75c02a) by k.loren (https://sketchfab.com/k.loren) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Spaceship 4" (https://sketchfab.com/3d-models/spaceship-4-a202b7aeace74902aa006defa33c55f6) by re1monsen (https://sketchfab.com/re1monsen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -10,6 +10,7 @@ import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import { Suspense } from "react";
 
+import { SCIFI } from "../SCIFI"
 const Home = () => {
 
     const GOLDENRATIO = 1.61803398875
@@ -138,11 +139,11 @@ const Home = () => {
                     <meshStandardMaterial color={"black"} metalness={0.5} roughness={0.5} envMapIntensity={2} />
                     <mesh ref={frame} raycast={() => null} scale={[0.95, 0.93, 0.9]} position={[0, 0, 0.2]}>
                         <boxGeometry />
-                            <VideoMaterial url={media} />
+                        <VideoMaterial url={media} />
                         <Edges
                             scale={1.1}
                             threshold={15} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
-                            color={isActive ? "orange":"turquoise"}
+                            color={isActive ? "orange" : "turquoise"}
                         />
                     </mesh>
 
@@ -379,13 +380,22 @@ const Home = () => {
                             <React.Fragment>
                                 <Environment map={texture} />
                                 {/* Elements here wont reflect on car */}
+                                <Float
+                                    speed={1} // Animation speed, defaults to 1
+                                    rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
+                                    floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+                                    floatingRange={[1.2, 1.5]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+                                >
+
+                                    <SCIFI />
+                                </Float >
 
                                 <Stars radius={100} depth={500} count={5000} factor={4} saturation={0} fade speed={2} />
                             </React.Fragment>
                         )}
                     </CubeCamera>
                     <EffectComposer>
-                        <DepthOfField focusDistance={0.0036} focalLength={0.03} bokehScale={6} height={480} />
+                        {/* <DepthOfField focusDistance={0.0096} focalLength={0.3} bokehScale={6} height={480} /> */}
                         <Bloom
                             blendFunction={BlendFunction.ADD}
                             intensity={0.25}
@@ -399,8 +409,8 @@ const Home = () => {
                             blendFunction={BlendFunction.NORMAL}
                             offset={[0.0005, 0.0012]} />
                     </EffectComposer>
-                </ScrollControls>
 
+                </ScrollControls>
             </Canvas>
         </div>
     )
