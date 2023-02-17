@@ -7,17 +7,18 @@ const NavigationBar = ({ }) => {
   useEffect(() => {
 
     if ((localStorage.getItem('theme') === 'dark')) {
-      console.log("It's dark..");
       document.documentElement.classList.add('dark');
       setToogle(false);
     }
     else if ((localStorage.getItem('theme') === 'light')) {
-      console.log("It's light..");
+
       document.documentElement.classList.remove('dark');
       setToogle(true);
     }
     else if ((localStorage.getItem('theme') == undefined)) {
       console.log("No theme set.. making it dark");
+      document.documentElement.classList.add('dark');
+
     }
   }, [])
 
@@ -34,8 +35,8 @@ const NavigationBar = ({ }) => {
       <span className={`cols-start-3 col-end-4 self-center justify-self-center`}>
         <label
           className="container"
-          // title={"Activate dark mode"}
-          // aria-label={"Activate dark mode"}
+        // title={"Activate dark mode"}
+        // aria-label={"Activate dark mode"}
         >
           <input
             type="checkbox"

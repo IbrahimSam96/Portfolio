@@ -21,14 +21,10 @@ import { FaLayerGroup } from 'react-icons/fa';
 import { SiTailwindcss } from 'react-icons/si';
 import { SiAzuredevops } from 'react-icons/si';
 import { SiNgrok } from 'react-icons/si';
+import { SiThreedotjs } from 'react-icons/si';
 
 
-// Material-UI
-import MobileStepper from '@mui/material/MobileStepper';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import { useTheme } from '@emotion/react';
+
 
 const Profile = ({ }) => {
 
@@ -37,7 +33,7 @@ const Profile = ({ }) => {
     <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,50px,350px,50px,380px,100px,1fr] bg-[#e4eff8] dark:bg-[#10182c]`}>
 
       <Head>
-        <title> {`Ibrahim - DevJdeed`} </title>
+        <title> Ibrahim - DevJdeed </title>
         <link rel="icon" href="/Textures/Me.jpg" />
       </Head>
 
@@ -90,71 +86,77 @@ const Profile = ({ }) => {
           <span className={`self-center justify-self-start flex `}>
             <span className={`group`} >
               <FaReact className={`animate-spin text-xs sm:text-lg `} color="#61dafb" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 react.js
               </span>
             </span>
             <span className={`group`} >
               <IoLogoElectron className={`text-xs sm:text-lg ml-1 hover:scale-110 `} color="#96DCE9" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 electron.js
               </span>
             </span>
 
             <span className={`group`} >
               <DiNodejsSmall className={` hover:scale-110	 text-xs sm:text-lg ml-1`} color="#77b360" fontSize="0.7rem" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 node.js/express
               </span>
             </span>
             <span className={`group`} >
               <FaNpm className={` hover:scale-110	 text-xs sm:text-lg ml-1`} color="red" fontSize="0.7rem" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 npm
               </span>
             </span>
             <span className={`group`} >
               <FaAws className={` hover:scale-110	 text-xs sm:text-lg ml-1`} color="orange" fontSize="0.7rem" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 aws
               </span>
             </span>
             <span className={`group`} >
               <IoLogoFirebase className={` hover:scale-110	text-xs sm:text-lg ml-1`} color="#FFCB2B" fontSize="0.7rem" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 firebase
               </span>
             </span>
 
             <span className={`group`} >
               <IoLogoVercel className={` hover:scale-110 bg-black text-xs sm:text-lg ml-1`} color="white" fontSize="0.7rem" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
-                next.js/vercel
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                next.js/ vercel
               </span>
             </span>
             <span className={`group`} >
               <SiTailwindcss className={` hover:scale-110  text-xs sm:text-lg ml-1`} color="#38bdf8" fontSize="0.7rem" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
-                tailwind
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                tailwindCSS
               </span>
             </span>
             <span className={`group`}>
 
               <SiAzuredevops className={` hover:scale-110  text-xs sm:text-lg ml-1`} color="#0074cd" fontSize="0.7rem" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 azure-devOps
               </span>
             </span>
             <span className={`group`}>
               <SiNgrok className={` hover:scale-110 bg-[#031d8e] text-xs sm:text-lg ml-1`} color="white" fontSize="0.7rem" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 ngrok
               </span>
             </span>
             <span className={`group`}>
               <FaStackOverflow className={` hover:scale-110  text-xs sm:text-lg ml-1`} color="orange" fontSize="0.7rem" />
-              <span className={`hidden sm:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 stackoverflow
+              </span>
+            </span>
+            <span className={`group`}>
+              <SiThreedotjs className={`bg-white hover:scale-110  text-xs sm:text-lg ml-1`} color="black" fontSize="0.7rem" />
+              <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
+                three.js
               </span>
             </span>
 
@@ -172,9 +174,9 @@ const Profile = ({ }) => {
             Paylock
           </p>
           <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
-            EVM-based smart contract application for sending & receiving withdrawable crypto payments, 
+            Winner at Tron Hackathon Season 3, EVM-based smart contract application for sending & receiving withdrawable crypto payments,
             this application uses Open Zeppelin Defender Relayer to relay transactions and Chainklink
-            price feed oracles to determine transactions fees.    
+            price feed oracles to determine transactions fees.
           </p>
           <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://paylock.vercel.app/' rel="noreferrer" target="_blank">
             <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
@@ -187,17 +189,17 @@ const Profile = ({ }) => {
               <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
             </span>
           </a>
-        </span> 
+        </span>
 
         <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-2 col-end-3 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
           <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
             Raffle Mania
           </p>
           <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
-             Winner at Polygon BUIDL IT: Summer 22 hacakathon, bullet-proof smart contract lottery deployed across 4 EVM chains
-              (Polygon Mumbai, Ethereum Goerli, Binance Testnet, Avalanche Fuji).
-             This application uses Chainlink Keepers to trigger raffle draw and
-             Chainlink VRF (Verifiable Random Function) to generate a random number.    
+            Winner at Polygon BUIDL IT: Summer 22 hacakathon, bullet-proof smart contract lottery deployed across 4 EVM chains
+            (Polygon Mumbai, Ethereum Goerli, Binance Testnet, Avalanche Fuji).
+            This application uses Chainlink Keepers to trigger raffle draw and
+            Chainlink VRF (Verifiable Random Function) to generate a random number.
           </p>
           <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://rafflemania.vercel.app/' rel="noreferrer" target="_blank">
             <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
@@ -210,7 +212,7 @@ const Profile = ({ }) => {
               <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
             </span>
           </a>
-        </span> 
+        </span>
 
         <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-3 col-end-4 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
           <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
