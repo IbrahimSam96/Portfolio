@@ -22,9 +22,9 @@ import { SiTailwindcss } from 'react-icons/si';
 import { SiAzuredevops } from 'react-icons/si';
 import { SiNgrok } from 'react-icons/si';
 import { SiThreedotjs } from 'react-icons/si';
-
-
-
+import { FaHardHat } from 'react-icons/fa';
+import { SiSolidity } from 'react-icons/si';
+import { SiChainlink } from 'react-icons/si';
 
 const Profile = ({ }) => {
 
