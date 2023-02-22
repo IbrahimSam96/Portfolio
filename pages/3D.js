@@ -198,11 +198,9 @@ const Home = () => {
 
                 return (
                     <span className={`flex`}>
-                        {tech.map((obj) => {
-                            console.log(obj)
+                        {tech.map((obj, key) => {
                             return (
-                                <>
-
+                                <React.Fragment key={key}>
                                     {obj == "Next.js" &&
                                         <span className={`group `} >
                                             <IoLogoVercel className={` hover:scale-110 bg-black p-2 rounded-xl ml-1`} color="white" fontSize="1.7rem" />
@@ -258,7 +256,7 @@ const Home = () => {
                                             </span>
                                         </span>}
 
-                                </>
+                                </React.Fragment>
                             )
                         })}
                     </span>
@@ -287,7 +285,7 @@ const Home = () => {
                             }} className={`shadow-md dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[40px,150px,20px,50px,30px,30px,100px] px-2 grid-cols-1 w-[400px]  `}>
                             <span>
                                 <Image
-                                    className={`align-middle self-center inline`}
+                                    className={`align-middle self-center inline `}
                                     src={`/${name}.svg`}
                                     alt="vintage"
                                     width={60}
@@ -325,7 +323,7 @@ const Home = () => {
                                         Award
                                     </p>
                                     <Image
-                                        className={`align-middle self-start inline`}
+                                        className={`align-middle self-start inline `}
                                         src={`/${name}Award.png`}
                                         alt="vintage"
                                         width={250}
