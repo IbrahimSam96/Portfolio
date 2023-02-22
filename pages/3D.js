@@ -177,6 +177,7 @@ const Home = () => {
         const frame = useRef();
         const [, params] = useRoute('/3D/:id')
         const [hovered, hover] = useState(false)
+        const [location, setLocation] = useLocation()
 
         const isActive = params?.id === name;
         useCursor(hovered)
@@ -275,7 +276,15 @@ const Home = () => {
                         portal={{ current: gl.domElement.parentNode }}
                         position={[-0.05, 0, 0]}
                     >
-                        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[40px,150px,20px,50px,30px,30px,100px] px-2 grid-cols-1 w-[400px]  `}>
+                        <span onMouseOver={() => {
+                            hover(true)
+                        }}
+                            onMouseOut={() => {
+                                hover(false)
+
+                            }} onClick={() => {
+                                setLocation(location == '/3D/' + name ? "/3D/" : '/3D/' + name)
+                            }} className={`shadow-md dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[40px,150px,20px,50px,30px,30px,100px] px-2 grid-cols-1 w-[400px]  `}>
                             <span>
                                 <Image
                                     className={`align-middle self-center inline`}
@@ -374,6 +383,7 @@ const Home = () => {
         const clicked = useRef();
         const [, params] = useRoute('/3D/:id')
         const [, setLocation] = useLocation()
+
         const scroll = useScroll()
 
         useFrame((state, delta) => {
