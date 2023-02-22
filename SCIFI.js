@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Mesh } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -7,7 +7,8 @@ import * as THREE from 'three'
 import { useAnimations, useGLTF, useScroll } from "@react-three/drei";
 
 
-export const SCIFI = ({}) => {
+export const SCIFI = () => {
+
 
     const url = "Model/SCIFI/SCIFI.gltf"
     const gltf = useLoader(GLTFLoader, url);
@@ -45,7 +46,5 @@ export const SCIFI = ({}) => {
         gltf.scene.position.set(x, y, scroll.scroll.current * -10 - 6)
     })
 
-
-
-    return <primitive object={gltf.scene} />
+    return <primitive object={gltf.scene}  />
 }

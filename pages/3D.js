@@ -17,6 +17,10 @@ import { SiTailwindcss } from "react-icons/si";
 import { FaHardHat } from 'react-icons/fa';
 import { SiSolidity } from 'react-icons/si';
 import { SiChainlink } from 'react-icons/si';
+import { Earth } from "../Earth";
+import { Moon } from "../Moon";
+import { Sun } from "../Sun";
+import { DragonXl } from "../DragonXl";
 
 const Home = () => {
 
@@ -609,6 +613,10 @@ const Home = () => {
                                     >
                                         <SCIFI />
                                     </Float >
+                                    <Earth />
+                                    <Moon />
+                                    <Sun />
+                                    <DragonXl />
                                 </Suspense>
                                 <Stars radius={100} depth={500} count={5000} factor={4} saturation={0} fade speed={2} />
                             </React.Fragment>
