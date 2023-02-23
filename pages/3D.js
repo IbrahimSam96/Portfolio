@@ -21,6 +21,7 @@ import { Earth } from "../Earth";
 import { Moon } from "../Moon";
 import { Sun } from "../Sun";
 import { DragonXl } from "../DragonXl";
+import Head from "next/head";
 
 const Home = () => {
 
@@ -557,6 +558,10 @@ const Home = () => {
 
     return (
         <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,1fr] bg-[black]`}>
+            <Head>
+                <title> Ibrahim - DevJdeed </title>
+                <link rel="icon" href="/Textures/Me.jpg" />
+            </Head>
 
             <Canvas className={`row-start-2 col-start-1 col-span-7`} shadows camera={{ fov: 70, position: [0, 2, 15] }}>
                 <Stats />
