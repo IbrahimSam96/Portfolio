@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from 'next/link'
 
 const NavigationBar = ({ }) => {
 
@@ -24,7 +25,7 @@ const NavigationBar = ({ }) => {
 
   return (
 
-    <div className={`my-4 col-start-1 col-end-8 row-start-1 row-end-2 grid grid-cols-[100px,1fr,50px] shadow-md dark:shadow-[#181f32] bg-[#DBE6F6] dark:bg-[#1e293b] animate-fade`} >
+    <div className={`my-4 col-start-1 col-end-8 row-start-1 row-end-2 grid grid-cols-[130px,1fr,30px,50px] shadow-md dark:shadow-[#181f32] bg-[#FFCBCB] dark:bg-[#1e293b] animate-fade`} >
 
       <a className={`inline justify-self-start self-center group ml-4`} href={"/"}>
         <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-light text-lg ml-1 group-hover:text-[#F43B5F]`}>{"<"}</p>
@@ -33,6 +34,13 @@ const NavigationBar = ({ }) => {
       </a>
 
       <span className={`cols-start-3 col-end-4 self-center justify-self-center`}>
+        <Link href="/3D">
+
+          <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-bold text-lg ml-1`}>3D</p>
+        </Link>
+      </span>
+
+      <span className={`cols-start-4 col-end-5 self-center justify-self-center`}>
         <label
           className="container"
         // title={"Activate dark mode"}

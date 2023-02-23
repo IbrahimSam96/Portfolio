@@ -30,7 +30,7 @@ const Profile = ({ }) => {
 
   return (
 
-    <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,50px,350px,50px,380px,100px,1fr] bg-[#e4eff8] dark:bg-[#10182c]`}>
+    <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,50px,350px,50px,380px,100px,1fr] bg-[#FFD1D1] dark:bg-[#10182c]`}>
 
       <Head>
         <title> Ibrahim - DevJdeed </title>
@@ -39,7 +39,7 @@ const Profile = ({ }) => {
 
       <NavigationBar />
 
-      <div className={` mx-4 px-2 row-start-3 row-end-4 col-start-1 col-end-8 sm:col-end-6 max-w-[500px] sm:justify-self-start grid grid-rows-[30px,80px,50px,120px,30px,40px] shadow-md dark:shadow-[#181f32] bg-[#DBE6F6] dark:bg-[#1e293b] animate-fade `}>
+      <div className={` mx-4 px-2 row-start-3 row-end-4 col-start-1 col-end-8 sm:col-end-6 max-w-[500px] sm:justify-self-start grid grid-rows-[30px,80px,50px,120px,30px,40px] shadow-md dark:shadow-[#181f32] bg-[#FFCBCB] dark:bg-[#1e293b] animate-fade `}>
         <React.Fragment>
           <span className={`self-center justify-self-start `}>
             <h2 className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-sm sm:text-lg `}>Hello World &#9996;</h2>
@@ -123,7 +123,7 @@ const Profile = ({ }) => {
             </span>
 
             <span className={`group`} >
-              <IoLogoVercel className={` hover:scale-110 bg-black text-xs sm:text-lg ml-1`} color="white" fontSize="0.7rem" />
+            <IoLogoVercel className={` hover:scale-110 bg-black p-1 rounded-xl text-xs sm:text-lg ml-1`} color="white" fontSize="1.7rem" />
               <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 next.js/ vercel
               </span>
@@ -154,7 +154,7 @@ const Profile = ({ }) => {
               </span>
             </span>
             <span className={`group`}>
-              <SiThreedotjs className={`bg-white hover:scale-110  text-xs sm:text-lg ml-1`} color="black" fontSize="0.7rem" />
+              <SiThreedotjs className={` hover:scale-110  text-xs sm:text-lg ml-1`} color="black" fontSize="0.7rem" />
               <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 three.js
               </span>
@@ -165,12 +165,12 @@ const Profile = ({ }) => {
         </React.Fragment>
       </div>
 
-      <div className={` mx-4 px-2 row-start-5 row-end-6 col-start-1 col-end-8 grid grid-rows-[50px,300px] overflow-x-auto overflow-y-hidden justify-self-auto shadow-md dark:shadow-[#181f32] bg-[#DBE6F6] dark:bg-[#1e293b] animate-fade `}>
+      <div className={` mx-4 px-2 row-start-5 row-end-6 col-start-1 col-end-8 grid grid-rows-[50px,300px] overflow-x-auto overflow-y-hidden justify-self-auto shadow-md dark:shadow-[#181f32] bg-[#FFD1D1] dark:bg-[#10182c] animate-fade `}>
 
         <h2 className={` ml-2 col-start-1 col-end-2 inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-lg self-center  `}> Recent Projects</h2>
 
-        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+        <span className={`bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
             Paylock
           </p>
           <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
@@ -191,8 +191,8 @@ const Profile = ({ }) => {
           </a>
         </span>
 
-        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-2 col-end-3 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+        <span className={` bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-2 col-end-3 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
             Raffle Mania
           </p>
           <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
@@ -214,8 +214,8 @@ const Profile = ({ }) => {
           </a>
         </span>
 
-        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-3 col-end-4 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+        <span className={`bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-3 col-end-4 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
             Easy Graphs
           </p>
           <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
@@ -238,8 +238,8 @@ const Profile = ({ }) => {
           </a>
         </span>
 
-        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-4 col-end-5 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px] `}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+        <span className={`bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-4 col-end-5 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px] `}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
             Markets Snap
           </p>
           <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
@@ -259,8 +259,8 @@ const Profile = ({ }) => {
 
         </span>
 
-        <span className={`shadow-md dark:shadow-[#181f32] m-2 col-start-5 col-end-6 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]`}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+        <span className={`bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-5 col-end-6 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]`}>
+          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
             Dashx-Portfolio
           </p>
           <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
