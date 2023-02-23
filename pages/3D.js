@@ -286,7 +286,7 @@ const Home = () => {
 
                             }} onClick={() => {
                                 setLocation(location == '/3D/' + name ? "/3D/" : '/3D/' + name)
-                            }} className={`shadow-md dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[40px,150px,20px,50px,30px,30px,100px] px-2 grid-cols-1 w-[400px]  `}>
+                            }} className={` m-2 col-start-1 col-end-2 grid grid-rows-[40px,150px,20px,50px,30px,30px,100px] px-2 grid-cols-1 w-[400px]  `}>
                             <span>
                                 <Image
                                     className={`align-middle self-center inline `}
