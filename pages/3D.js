@@ -1,4 +1,4 @@
-import { Edges, useCursor, Environment, MeshReflectorMaterial, Stats, Text, useTexture, Stars, CubeCamera, useVideoTexture, Float, useScroll, ScrollControls, Html } from "@react-three/drei";
+import { Edges, useCursor, Environment, MeshReflectorMaterial, Stats, Text, useTexture, Stars, CubeCamera, useVideoTexture, Float, useScroll, ScrollControls, Html, Loader } from "@react-three/drei";
 import { Canvas, useLoader, useFrame, useThree } from "@react-three/fiber";
 import React from "react";
 import { useRef, useEffect, useState } from "react";
@@ -510,9 +510,13 @@ const Home = () => {
         }, [])
 
         useFrame((state) => {
+            let elapsed = state.clock.getElapsedTime();
+
             for (let i = 0; i < ringsRef.current.length; i++) {
                 let mesh = ringsRef.current[i];
-                let z = (i - 7) * 3.5;
+                // let z = (i - 7) * 3.5;
+                let z = (i - 7) * 3.5 + ((elapsed * 0.4) % 3.5) * 2;
+
                 let x = (i - 7) * .5;
 
                 mesh.position.set(0, 0, -z)

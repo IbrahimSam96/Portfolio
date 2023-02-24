@@ -43,8 +43,8 @@ export const SCIFI = () => {
 
         let x = state.mouse.x * 0.25
         let y = state.mouse.y * 0.25 + 2
-        gltf.scene.position.set(x, y, scroll.scroll.current * -10 - 6)
+        gltf.scene.position.set(x, y, scroll.scroll.current * -25 )
     })
 
-    return <primitive object={gltf.scene}  />
+    return <primitive object={gltf.scene} />
 }
