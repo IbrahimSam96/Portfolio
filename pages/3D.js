@@ -27,6 +27,20 @@ const Home = () => {
 
     const GOLDENRATIO = 1.61803398875
 
+    const [width, setWidth] = useState();
+    const handleWindowSizeChange = () => {
+        setWidth(window.innerWidth);
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    const isMobilePhoneCheck = width <= 768
+
     const projects = [
         // Front
         {
@@ -51,15 +65,14 @@ const Home = () => {
 
         },
         {
-            position: [-1.5, 0, -10.0],
-            rotation: [0, Math.PI / 3.5, 0],
-
-            url: "https://easy-graphs.vercel.app/",
-            name: "EasyGraphs",
-            isProject: true,
-            description: "Next.js SSR app deployed on vercel using Firebase microservices (Auth, Analytics, No-Sql firestore.) I tried to help creators share visuals and infographics in a dashboard.(Currently on the shelf, needs some motivation.)",
+            position: [1.5, 0, -2.5],
+            rotation: [0, -Math.PI / 3.5, 0],
+            url: "",
+            name: "Teal",
+            isProject: false,
+            description: "",
             isAward: false,
-            tech: ["Next.js", "TailwindCSS", "Firebase"]
+            tech: []
 
         },
         {
@@ -85,21 +98,83 @@ const Home = () => {
 
         },
         {
-            position: [1.5, 0, -2.5],
-            rotation: [0, -Math.PI / 3.5, 0],
-            url: "",
-            name: "Teal",
-            isProject: false,
-            description: "",
+            position: [-1.5, 0, -10.0],
+            rotation: [0, Math.PI / 3.5, 0],
+
+            url: "https://easy-graphs.vercel.app/",
+            name: "EasyGraphs",
+            isProject: true,
+            description: "Next.js SSR app deployed on vercel using Firebase microservices (Auth, Analytics, No-Sql firestore.) I tried to help creators share visuals and infographics in a dashboard.(Currently on the shelf, needs some motivation.)",
             isAward: false,
-            tech: []
+            tech: ["Next.js", "TailwindCSS", "Firebase"]
 
         },
-        // { position: [-2, 0, 2.75], rotation: [0, Math.PI / 2.5, 0], url: pexel(358574) },
-        // // Right
-        // { position: [1.75, 0, 0.25], rotation: [0, -Math.PI / 2.5, 0], url: pexel(227675) },
-        // { position: [2.15, 0, 1.5], rotation: [0, -Math.PI / 2.5, 0], url: pexel(911738) },
-        // { position: [2, 0, 2.75], rotation: [0, -Math.PI / 2.5, 0], url: pexel(1738986) }
+
+        // {
+        //     position: [1.5, 0, -12.5],
+        //     rotation: [0, -Math.PI / 3.5, 0],
+        //     url: "https://paylock.vercel.app/",
+        //     name: "Paylock",
+        //     isProject: true,
+        //     description: "EVM-based smart contract application for sending & receiving withdrawable ERC20 payments.This application uses Open Zeppelin Defender Relayer to relay transactions and Chainklink price feed oracles to determine transactions fees on chain.",
+        //     isAward: true,
+        //     tech: ["Solidity", "Next.js", "TailwindCSS", "Hardhat", "Chainlink"]
+        // },
+        // {
+        //     position: [-1.5, 0, -15],
+        //     rotation: [0, Math.PI / 3.5, 0],
+        //     url: "https://rafflemania.vercel.app/",
+        //     name: "Rafflemania",
+        //     isProject: true,
+        //     description: "Winner at Polygon BUIDL IT: Summer 22 hacakathon, bullet-proof smart contract lottery deployed across 4 EVM chains(Polygon Mumbai, Ethereum Goerli, Binance Testnet, Avalanche Fuji). This application uses Chainlink Keepers to trigger raffle draw and Chainlink VRF (Verifiable Random Function) to generate a random number.",
+        //     isAward: true,
+        //     tech: ["Solidity", "Next.js", "TailwindCSS", "Hardhat", "Chainlink"]
+
+        // },
+        // {
+        //     position: [1.5, 0, -17.5],
+        //     rotation: [0, -Math.PI / 3.5, 0],
+        //     url: "https://easy-graphs.vercel.app/",
+        //     name: "EasyGraphs",
+        //     isProject: true,
+        //     description: "Next.js SSR app deployed on vercel using Firebase microservices (Auth, Analytics, No-Sql firestore.) I tried to help creators share visuals and infographics in a dashboard.(Currently on the shelf, needs some motivation.)",
+        //     isAward: false,
+        //     tech: ["Next.js", "TailwindCSS", "Firebase"]
+
+        // },
+        // {
+        //     position: [-1.5, 0, -20.0],
+        //     rotation: [0, Math.PI / 3.5, 0],
+        //     url: "https://dashx-portfolio.web.app/",
+        //     name: "DashX",
+        //     isProject: true,
+        //     description: "React.js dashboard deployed on Firebase, aimed to aggregate transactional level data and display real-time performance and exposure of sub-managed accounts.(Currently on the shelf, needs some motivation.)",
+        //     isAward: false,
+        //     tech: ["React.js", "TailwindCSS", "Firebase"]
+
+        // },
+        // {
+        //     position: [1.5, 0, -22.5],
+        //     rotation: [0, -Math.PI / 3.5, 0],
+        //     url: "https://marketssnap.web.app/",
+        //     name: "MarketsSnap",
+        //     isProject: true,
+        //     description: "React.js client-side app deployed on Firebase consuming Trading View's I-Frames to display brief overview of financial markets.",
+        //     isAward: false,
+        //     tech: ["React.js", "TailwindCSS", "Firebase"]
+
+        // },
+        // {
+        //     position: [1.5, 0, -25.5],
+        //     rotation: [0, -Math.PI / 3.5, 0],
+        //     url: "",
+        //     name: "Teal",
+        //     isProject: false,
+        //     description: "",
+        //     isAward: false,
+        //     tech: []
+
+        // },
     ]
 
     const Ground = () => {
@@ -186,7 +261,6 @@ const Home = () => {
 
         const isActive = params?.id === name;
         useCursor(hovered)
-
 
         const VideoMaterial = () => {
             const texture = useVideoTexture(`\Textures/${name}.mp4`)
@@ -358,16 +432,13 @@ const Home = () => {
                     <meshStandardMaterial color={"black"} metalness={0.5} roughness={0.5} envMapIntensity={2} />
                     <mesh ref={frame} raycast={() => null} scale={[0.95, 0.93, 0.9]} position={[0, 0, 0.2]}>
                         <boxGeometry />
-
                         {isProject ? <ProjectDetails /> : <VideoMaterial />}
-
                         <Edges
                             scale={1.1}
                             threshold={15} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
                             color={isActive || hovered ? "orange" : "turquoise"}
                         />
                     </mesh>
-
                     {/* <Image raycast={() => null} ref={project} position={[0, 0, 0.7]} url={url} /> */}
                 </mesh>
 
@@ -375,8 +446,6 @@ const Home = () => {
                     <Text color={"White"} maxWidth={0.1} anchorX="left" anchorY="top" position={[0.65, GOLDENRATIO, 0]} fontSize={0.05}>
                         {name}
                     </Text>}
-
-
             </group>
         )
     }
@@ -400,7 +469,7 @@ const Home = () => {
             else {
                 let x = state.mouse.x * 0.25
                 let y = state.mouse.y * 0.25
-                p.set(x, y, 6.5 + scroll.scroll.current * -10)
+                p.set(x, y, 6.5 + scroll.scroll.current * -14)
                 q.identity()
             }
         })
@@ -413,6 +482,18 @@ const Home = () => {
 
         })
 
+        // useFrame((state, delta) => {
+        //     for (let i = 0; i < projects.length; i++) {
+        //         let mesh = project.current[i];
+
+        //         let z = (i - 7) * 3.5 + ((elapsed * 0.4) % 3.5) * 2;
+
+        //     }
+        //     // console.log(state.camera.position.z)
+        //     // console.log(params)
+
+        // })
+
         return (
             <React.Fragment>
                 <group
@@ -422,7 +503,7 @@ const Home = () => {
                             setLocation(clicked.current == e.object ? '/3D' : '/3D/' + e.object.name)
                     }}
                     onPointerMissed={() => setLocation('/3D')}>
-                    {projects.map((props, index) => <Frame key={props.url} {...props} index={index} /> /* prettier-ignore */)}
+                    {projects.map((props, index) => <Frame key={props.position} {...props} index={index} /> /* prettier-ignore */)}
 
                 </group>
             </React.Fragment>
@@ -570,7 +651,7 @@ const Home = () => {
             <Canvas className={`row-start-2 col-start-1 col-span-7`} shadows camera={{ fov: 70, position: [0, 2, 15] }}>
                 <Stats />
                 <ambientLight intensity={1} />
-                <ScrollControls damping={4} pages={4} distance={1} infinite >
+                <ScrollControls damping={4} pages={8} distance={1} infinite >
                     {[
                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -608,24 +689,34 @@ const Home = () => {
                         </mesh>
                     </group>
 
+
                     <CubeCamera resolution={125} frames={Infinity}>
                         {(texture) => (
                             <React.Fragment>
                                 <Environment map={texture} />
                                 {/* Elements here wont reflect on car */}
                                 <Suspense fallback={null}>
-                                    <Float
-                                        speed={1} // Animation speed, defaults to 1
-                                        rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
-                                        floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-                                        floatingRange={[1.2, 1.5]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-                                    >
-                                        <SCIFI />
-                                    </Float >
-                                    <Earth />
-                                    <Moon />
-                                    <Sun />
-                                    <DragonXl />
+                                    {isMobilePhoneCheck ?
+                                        <>
+                                        </>
+                                        :
+                                        <>
+                                            <Float
+                                                speed={1} // Animation speed, defaults to 1
+                                                rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
+                                                floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+                                                floatingRange={[1.2, 1.5]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+                                            >
+                                                <SCIFI />
+                                            </Float >
+                                            <Earth />
+                                            <Moon />
+                                            <Sun />
+                                            <DragonXl />
+                                        </>
+
+                                    }
+
                                 </Suspense>
                                 <Stars radius={100} depth={500} count={5000} factor={4} saturation={0} fade speed={2} />
                             </React.Fragment>

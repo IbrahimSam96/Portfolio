@@ -29,8 +29,8 @@ const NavigationBar = ({ }) => {
 
       <a className={`inline justify-self-start self-center group ml-4`} href={"/"}>
         <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-light text-lg ml-1 group-hover:text-[#F43B5F]`}>{"<"}</p>
-        <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-lg ml-1 group-hover:m-2`}>{"Ibrahim"}</p>
-        <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-light text-lg ml-1 group-hover:text-[#F43B5F] `}>{"/>"}</p>
+        <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-lg ml-1 `}>{"Ibrahim"}</p>
+        <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-light text-lg ml-1 group-hover:text-[#F43B5F] `}>{" / >"}</p>
       </a>
 
       <span className={`cols-start-3 col-end-4 self-center justify-self-center`}>
