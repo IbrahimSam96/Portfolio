@@ -44,7 +44,7 @@ const Home = () => {
             position: [-1.5, 0, 0],
             rotation: [0, Math.PI / 3.5, 0],
             url: "https://rafflemania.vercel.app/",
-            name: "Rafflemania",
+            name: "RaffleMania",
             isProject: true,
             description: "Winner at Polygon BUIDL IT: Summer 22 hacakathon, bullet-proof smart contract lottery deployed across 4 EVM chains(Polygon Mumbai, Ethereum Goerli, Binance Testnet, Avalanche Fuji). This application uses Chainlink Keepers to trigger raffle draw and Chainlink VRF (Verifiable Random Function) to generate a random number.",
             isAward: true,
