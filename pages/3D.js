@@ -22,24 +22,11 @@ import { Moon } from "../Moon";
 import { Sun } from "../Sun";
 import { DragonXl } from "../DragonXl";
 import Head from "next/head";
+import { isMobile } from 'react-device-detect';
 
 const Home = () => {
 
     const GOLDENRATIO = 1.61803398875
-
-    const [width, setWidth] = useState();
-    const handleWindowSizeChange = () => {
-        setWidth(window.innerWidth);
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
-        return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
-        }
-    }, []);
-
-    const isMobilePhoneCheck = width <= 768
 
     const projects = [
         // Front
@@ -696,7 +683,7 @@ const Home = () => {
                                 <Environment map={texture} />
                                 {/* Elements here wont reflect on car */}
                                 <Suspense fallback={null}>
-                                    {isMobilePhoneCheck ?
+                                    {isMobile ?
                                         <>
                                         </>
                                         :
