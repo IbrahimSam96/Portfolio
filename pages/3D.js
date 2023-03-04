@@ -633,6 +633,10 @@ const Home = () => {
             <Head>
                 <title> Ibrahim - DevJdeed </title>
                 <link rel="icon" href="/Textures/Me.jpg" />
+                <meta name="description" 
+                content="Exprerienced Frontend Developer, 
+                specialized in building smart contract integrated applications. "/>
+
             </Head>
 
             <Canvas className={`row-start-2 col-start-1 col-span-7`} shadows camera={{ fov: 70, position: [0, 2, 15] }}>
