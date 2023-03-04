@@ -35,6 +35,9 @@ const Profile = ({ }) => {
       <Head>
         <title> Ibrahim - DevJdeed </title>
         <link rel="icon" href="/Textures/Me.jpg" />
+        <meta name="description"
+          content="Exprerienced Frontend Developer, 
+                specialized in building smart contract integrated applications. "/>
       </Head>
 
       <NavigationBar />
@@ -123,7 +126,7 @@ const Profile = ({ }) => {
             </span>
 
             <span className={`group`} >
-            <IoLogoVercel className={` hover:scale-110 bg-black p-1 rounded-xl text-xs sm:text-lg ml-1`} color="white" fontSize="1.7rem" />
+              <IoLogoVercel className={` hover:scale-110 bg-black p-1 rounded-xl text-xs sm:text-lg ml-1`} color="white" fontSize="1.7rem" />
               <span className={`hidden group-hover:inline absolute invisible p-1 rounded border  bg-[#172b42] shadow-md shadow-[#130707] ml-4 text-xs text-white group-hover:visible group-hover:z-50`}>
                 next.js/ vercel
               </span>
