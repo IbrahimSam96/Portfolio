@@ -30,7 +30,7 @@ const Profile = ({ }) => {
 
   return (
 
-    <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,50px,350px,50px,380px,100px,1fr] bg-[#FFD1D1] dark:bg-[#10182c]`}>
+    <div className={`h-full min-h-screen w-full grid grid-cols-[repeat(7,1fr)] grid-rows-[80px,50px,350px,50px,380px,100px,1fr] bg-[#FFFFFF] dark:bg-[#10182c]`}>
 
       <Head>
         <title> Ibrahim - DevJdeed </title>
@@ -42,13 +42,13 @@ const Profile = ({ }) => {
 
       <NavigationBar />
 
-      <div className={` mx-4 px-2 row-start-3 row-end-4 col-start-1 col-end-8 sm:col-end-6 max-w-[500px] sm:justify-self-start grid grid-rows-[30px,80px,50px,120px,30px,40px] shadow-md dark:shadow-[#181f32] bg-[#FFCBCB] dark:bg-[#1e293b] animate-fade `}>
+      <div className={` mx-4 px-2 row-start-3 row-end-4 col-start-1 col-end-8 sm:col-end-6 max-w-[500px] sm:justify-self-start grid grid-rows-[30px,80px,50px,120px,30px,40px] shadow-md shadow-[grey] dark:shadow-[#181f32] bg-[#F8F8F8] dark:bg-[#1e293b] animate-fade `}>
         <React.Fragment>
           <span className={`self-center justify-self-start `}>
             <h2 className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-sm sm:text-lg `}>Hello World &#9996;</h2>
           </span>
 
-          <span className={`self-start justify-self-start inline min-w-fit sm:max-w-full `}>
+          <span className={`self-start justify-self-start inline sm:max-w-[440px] max-w-full`}>
             <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-light text-xs sm:text-sm `}> I"m a self taught developer specialized
               in building responsive web-applications using
             </p>
@@ -168,124 +168,128 @@ const Profile = ({ }) => {
         </React.Fragment>
       </div>
 
-      <div className={` mx-4 px-2 row-start-5 row-end-6 col-start-1 col-end-8 grid grid-rows-[50px,300px] overflow-x-auto overflow-y-hidden justify-self-auto shadow-md dark:shadow-[#181f32] bg-[#FFD1D1] dark:bg-[#10182c] animate-fade `}>
+      <div className={` mx-4 px-2 row-start-5 row-end-6 col-start-1 col-end-8 grid grid-rows-[50px,300px] overflow-x-auto overflow-y-hidden justify-self-auto shadow-md shadow-[grey] dark:shadow-[#181f32] bg-[#F8F8F8] dark:bg-[#10182c] animate-fade `}>
 
-        <h2 className={` ml-2 col-start-1 col-end-2 inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-lg self-center  `}> Recent Projects</h2>
+        <h2 className={` ml-2 col-start-1 col-end-8 inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-lg self-center `}> Recent Projects</h2>
 
-        <span className={`bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
-            Paylock
-          </p>
-          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
-            Winner at Tron Hackathon Season 3, EVM-based smart contract application for sending & receiving withdrawable crypto payments,
-            this application uses Open Zeppelin Defender Relayer to relay transactions and Chainklink
-            price feed oracles to determine transactions fees.
-          </p>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://paylock.vercel.app/' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
-              View Webpage
-            </span>
-          </a>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/Paylock' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
-              View on Github
-              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
-            </span>
-          </a>
-        </span>
+        <span className={`flex `} >
 
-        <span className={` bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-2 col-end-3 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
-            Raffle Mania
-          </p>
-          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
-            Winner at Polygon BUIDL IT: Summer 22 hacakathon, bullet-proof smart contract lottery deployed across 4 EVM chains
-            (Polygon Mumbai, Ethereum Goerli, Binance Testnet, Avalanche Fuji).
-            This application uses Chainlink Keepers to trigger raffle draw and
-            Chainlink VRF (Verifiable Random Function) to generate a random number.
-          </p>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://rafflemania.vercel.app/' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
-              View Webpage
-            </span>
-          </a>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/rafflemania' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
-              View on Github
-              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
-            </span>
-          </a>
-        </span>
+          <span className={`bg-[#F8F8F8] dark:bg-[#1e293b] shadow-md shadow-[grey] dark:shadow-[#181f32] m-2 col-start-1 col-end-2 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
+            <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+              Paylock
+            </p>
+            <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+              Winner at Tron Hackathon Season 3, EVM-based smart contract application for sending & receiving withdrawable crypto payments,
+              this application uses Open Zeppelin Defender Relayer to relay transactions and Chainklink
+              price feed oracles to determine transactions fees.
+            </p>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://paylock.vercel.app/' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+                View Webpage
+              </span>
+            </a>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/Paylock' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+                View on Github
+                <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+              </span>
+            </a>
+          </span>
 
-        <span className={`bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-3 col-end-4 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
-            Easy Graphs
-          </p>
-          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
-            NextJs SSR app deployed on vercel using
-            Firebase microservices (Auth, Analytics, No-Sql firestore.)
-            In This side-project I tried to help creators
-            share visuals and infographics in a dashboard.
-            (Currently on the shelf, needs some motivation.)
-          </p>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://easy-graphs.vercel.app/' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
-              View Webpage
-            </span>
-          </a>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/EasyGraphs' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
-              View on Github
-              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
-            </span>
-          </a>
-        </span>
+          <span className={` bg-[#F8F8F8] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-2 col-end-3 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
+            <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+              Raffle Mania
+            </p>
+            <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+              Winner at Polygon BUIDL IT: Summer 22 hacakathon, bullet-proof smart contract lottery deployed across 4 EVM chains
+              (Polygon Mumbai, Ethereum Goerli, Binance Testnet, Avalanche Fuji).
+              This application uses Chainlink Keepers to trigger raffle draw and
+              Chainlink VRF (Verifiable Random Function) to generate a random number.
+            </p>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://rafflemania.vercel.app/' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+                View Webpage
+              </span>
+            </a>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/rafflemania' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+                View on Github
+                <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+              </span>
+            </a>
+          </span>
 
-        <span className={`bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-4 col-end-5 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px] `}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
-            Markets Snap
-          </p>
-          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
-            ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display brief overview of financial markets.
-          </p>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://marketsSnap.web.app' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
-              View Webpage
-            </span>
-          </a>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/MarketsSnap' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
-              View on Github
-              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
-            </span>
-          </a>
+          <span className={`bg-[#F8F8F8] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-3 col-end-4 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]  `}>
+            <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+              Easy Graphs
+            </p>
+            <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+              NextJs SSR app deployed on vercel using
+              Firebase microservices (Auth, Analytics, No-Sql firestore.)
+              In This side-project I tried to help creators
+              share visuals and infographics in a dashboard.
+              (Currently on the shelf, needs some motivation.)
+            </p>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://easy-graphs.vercel.app/' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+                View Webpage
+              </span>
+            </a>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/EasyGraphs' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+                View on Github
+                <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+              </span>
+            </a>
+          </span>
 
-        </span>
+          <span className={`bg-[#F8F8F8] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-4 col-end-5 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px] `}>
+            <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+              Markets Snap
+            </p>
+            <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+              ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display brief overview of financial markets.
+            </p>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://marketsSnap.web.app' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+                View Webpage
+              </span>
+            </a>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/MarketsSnap' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+                View on Github
+                <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+              </span>
+            </a>
 
-        <span className={`bg-[#FFCBCB] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-5 col-end-6 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]`}>
-          <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
-            Dashx-Portfolio
-          </p>
-          <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
-            ReactJs dashboard deployed on Firebase,
-            aimed to aggregate transactional level data and display real-time performance and exposure of sub-managed accounts.
+          </span>
 
-          </p>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://dashx-Portfolio.web.app' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
-              View Webpage
-            </span>
-          </a>
-          <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/GraphX' rel="noreferrer" target="_blank">
-            <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
-              View on Github
-              <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
-            </span>
-          </a>
+          <span className={`bg-[#F8F8F8] dark:bg-[#1e293b] shadow-md dark:shadow-[#181f32] m-2 col-start-5 col-end-6 grid grid-rows-[50px,160px,50px] px-2 grid-cols-1 w-[300px]`}>
+            <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter font-black text-sm justify-self-center col-start-1 col-end-2 self-center`}>
+              Dashx-Portfolio
+            </p>
+            <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm col-start-1 col-end-2 justify-self-center self-center`}>
+              ReactJs dashboard deployed on Firebase,
+              aimed to aggregate transactional level data and display real-time performance and exposure of sub-managed accounts.
 
+            </p>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-start inline`} href='https://dashx-Portfolio.web.app' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400`}>
+                View Webpage
+              </span>
+            </a>
+            <a className={`self-end row-start-3 col-start-1 col-end-2 justify-self-end `} href='https://github.com/IbrahimSam96/GraphX' rel="noreferrer" target="_blank">
+              <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white leading-3 bg-slate-700 rounded p-1 px-2 hover:bg-slate-400 flex items-center `}>
+                View on Github
+                <FaGithub color="#F43B5F" fontSize="0.7rem" className={`self-center align-middle ml-1 `} />
+              </span>
+            </a>
+
+          </span>
         </span>
 
       </div>
+
     </div>
   )
 }

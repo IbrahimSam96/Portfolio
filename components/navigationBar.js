@@ -25,7 +25,7 @@ const NavigationBar = ({ }) => {
 
   return (
 
-    <div className={`my-4 col-start-1 col-end-8 row-start-1 row-end-2 grid grid-cols-[130px,1fr,30px,50px] shadow-md dark:shadow-[#181f32] bg-[#FFCBCB] dark:bg-[#1e293b] animate-fade`} >
+    <div className={`my-4 col-start-1 col-end-8 row-start-1 row-end-2 grid grid-cols-[130px,1fr,30px,50px] shadow-md dark:shadow-[#181f32] bg-[#F8F8F8] dark:bg-[#1e293b] animate-fade`} >
 
       <a className={`inline justify-self-start self-center group ml-4`} href={"/"}>
         <p className={`inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-light text-lg ml-1 group-hover:text-[#F43B5F]`}>{"<"}</p>
