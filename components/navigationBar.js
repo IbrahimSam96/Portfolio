@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Link from 'next/link'
 
-const NavigationBar = ({ }) => {
+const NavigationBar = ({ toggle, setToogle }) => {
 
-  const [toggle, setToogle] = useState(true);
+  // const [toggle, setToogle] = useState(true);
 
   useEffect(() => {
 
@@ -19,6 +19,8 @@ const NavigationBar = ({ }) => {
     else if ((localStorage.getItem('theme') == undefined)) {
       console.log("No theme set.. making it dark");
       document.documentElement.classList.add('dark');
+      setToogle(false);
+      localStorage.setItem('theme', 'dark');
 
     }
   }, [])
