@@ -16,7 +16,7 @@
     "@react-three/drei": "^9.56.1",
     "@react-three/fiber": "^8.10.1",
     "@react-three/postprocessing": "^2.7.0",
-    "@vercel/analytics": "^0.1.10",
+    "@vercel/analytics": "^0.1.11",
     "maath": "^0.5.2",
     "next": "13.0.6",
     "postprocessing": "^6.29.3",

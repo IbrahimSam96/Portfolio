@@ -194,6 +194,42 @@ const Profile = ({ }) => {
 
                 <span className={`shadow-md shadow-slate-800 dark:border-t-[#F43B5F] dark:border-t-2 flex flex-wrap rounded justify-center ${toggle ? 'StripeWaves' : ''}`}>
 
+
+                    <span className={`bg-[#F8F8F8] dark:bg-[#1e293b] shadow-md shadow-[grey] dark:shadow-[#181f32]  grid grid-rows-[auto,auto,auto,auto] px-2 sm:w-[450px]  m-4 rounded`}>
+
+                        <p className={`m-2 text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-start self-center`}>
+                            Apes Gallery
+                        </p>
+
+                        <span className={`flex justify-self-center self-center text-center`}>
+                            <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter text-sm justify-self-start self-center`}>
+                                Next.js • TailwindCSS • GraphQL • React-three/fiber • React-three/drei
+                            </p>
+                        </span>
+
+                        <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm justify-self-center self-center m-2`}>
+                            A 3D NFT gallery showcasing BAYC NFT holders. Featuring top holders of BAYC NFT's and
+                            a simple way to view query any wallet address for BAYC NFT's.
+                            Submission for Scaling Ethereum 2023 and received APE Coin Best Integration award.
+
+                        </p>
+                        <span className={`flex self-center m-2`} >
+                            <a className={`mr-auto inline`} href='https://bayc-gallery.vercel.app/' rel="noreferrer" target="_blank">
+                                <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white bg-slate-700 rounded p-2 hover:bg-slate-400`}>
+                                    View Webpage
+                                </span>
+                            </a>
+
+                            <a className={`ml-auto inline`} href='https://github.com/IbrahimSam96/ApesGallery' rel="noreferrer" target="_blank">
+                                <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white  bg-slate-700 rounded p-2 hover:bg-slate-400 flex items-center `}>
+                                    View on Github
+                                    <FaGithub color="#F43B5F" className={`self-center align-middle ml-1 text-xs`} />
+                                </span>
+                            </a>
+                        </span>
+
+                    </span>
+
                     <span className={`bg-[#F8F8F8] dark:bg-[#1e293b] shadow-md shadow-[grey] dark:shadow-[#181f32]  grid grid-rows-[auto,auto,auto,auto] px-2 sm:w-[450px] m-4 rounded`}>
 
                         <p className={`m-2 text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-start self-center`}>
@@ -364,6 +400,37 @@ const Profile = ({ }) => {
 
                     </span>
 
+                    <span className={`bg-[#F8F8F8] dark:bg-[#1e293b] shadow-md shadow-[grey] dark:shadow-[#181f32]  grid grid-rows-[auto,auto,auto,auto] px-2 sm:w-[450px]  m-4 rounded`}>
+
+                        <p className={`m-2 text-slate-900 dark:text-[whitesmoke] tracking-tighter font-bold text-sm justify-self-start self-center`}>
+                            Markets Snap
+                        </p>
+
+                        <span className={`flex justify-self-center self-center text-center`}>
+                            <p className={`text-slate-900 dark:text-[whitesmoke] tracking-tighter text-sm justify-self-start self-center`}>
+                                React.js • TradingView-Iframes
+                            </p>
+                        </span>
+
+                        <p className={`inline text-slate-700 dark:text-[whitesmoke] tracking-tighter font-light text-sm justify-self-center self-center m-2`}>
+                            ReactJs client-side app deployed on Firebase consuming Trading View's I-Frames to display brief overview of financial markets.
+                        </p>
+                        <span className={`flex self-center m-2`} >
+                            <a className={`mr-auto inline`} href='https://marketsSnap.web.app/' rel="noreferrer" target="_blank">
+                                <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer inline text-white bg-slate-700 rounded p-2 hover:bg-slate-400`}>
+                                    View Webpage
+                                </span>
+                            </a>
+
+                            <a className={`ml-auto inline`} href='https://github.com/IbrahimSam96/MarketsSnap' rel="noreferrer" target="_blank">
+                                <span className={`shadow-md dark:shadow-[#181f32] text-xs cursor-pointer text-white  bg-slate-700 rounded p-2 hover:bg-slate-400 flex items-center `}>
+                                    View on Github
+                                    <FaGithub color="#F43B5F" className={`self-center align-middle ml-1 text-xs`} />
+                                </span>
+                            </a>
+                        </span>
+
+                    </span>
 
                 </span>
 
