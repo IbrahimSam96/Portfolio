@@ -192,7 +192,7 @@ const Profile = ({ }) => {
 
                 <h2 className={`m-2 inline text-slate-800 dark:text-[whitesmoke] tracking-tighter font-black text-lg self-start `}> Recent Projects</h2>
 
-                <span className={`shadow-md shadow-slate-800 dark:border-t-[#F43B5F] dark:border-t-2 flex flex-wrap rounded justify-center ${toggle ? 'StripeWaves' : ''}`}>
+                <span className={`shadow-md shadow-slate-800 dark:border-t-[#F43B5F] dark:border-t-2 flex flex-wrap rounded justify-center`}>
 
 
                     <span className={`bg-[#F8F8F8] dark:bg-[#1e293b] shadow-md shadow-[grey] dark:shadow-[#181f32]  grid grid-rows-[auto,auto,auto,auto] px-2 sm:w-[450px]  m-4 rounded`}>
